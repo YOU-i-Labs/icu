@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD 11 CACHE STRING "Default C++ standard")
 
 string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" ICU_WINDOWS_STORE)
 
-if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR CMAKE_CROSSCOMPILING)
+if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS)
   set(default OFF)
 else()
   set(default ON)
@@ -105,7 +105,7 @@ install(
 ### RPATH settings {
 
 # https://cmake.org/Wiki/CMake_RPATH_handling
-if(IOS)
+if(IOS OR TVOS)
   # TODO: iOS dynamic framework
 elseif(ANDROID)
   # *.so libraries loaded by Java code, RPATH will not be used
