@@ -303,6 +303,12 @@ endif()
 
 if(NOT BUILD_SHARED_LIBS)
   target_compile_definitions(icuuc PUBLIC U_STATIC_IMPLEMENTATION)
+
+  # When U_STATIC_IMPLEMENTATION is defined cmemory.h is required to be included.
+  install(
+    FILES "cmemory.h"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+  )
 endif()
 
 if(MSVC)
