@@ -280,7 +280,9 @@ if(U_NO_DEFAULT_INCLUDE_UTF_HEADERS)
   )
 endif()
 
-target_link_libraries(icuuc PUBLIC ${CMAKE_DL_LIBS})
+if (NOT ICU_NO_DYLOAD)
+    target_link_libraries(icuuc PUBLIC ${CMAKE_DL_LIBS})
+endif()
 
 if(ICU_DATA_ARCHIVE_MODE)
   target_link_libraries(icuuc PUBLIC icustubdata)

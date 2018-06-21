@@ -13,7 +13,7 @@ project(ICU VERSION 55.1 LANGUAGES C CXX ASM)
 
 string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" ICU_WINDOWS_STORE)
 
-if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS)
+if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS OR TIZEN_NACL)
   set(default OFF)
 else()
   set(default ON)
@@ -23,6 +23,14 @@ if(MSVC)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
   add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
   add_definitions(-DU_ATTRIBUTE_DEPRECATED=)
+endif()
+
+if(TIZEN_NACL)
+  set(ICU_NO_DYLOAD ON)
+endif()
+
+if(ICU_NO_DYLOAD)
+  add_definitions(-DU_ENABLE_DYLOAD=0)
 endif()
 
 option(ICU_BUILD_TOOLS "Build ICU tools" ${default})
