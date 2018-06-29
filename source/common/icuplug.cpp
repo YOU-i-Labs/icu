@@ -44,6 +44,10 @@ using namespace icu;
 #define DBG(x) fprintf(stderr, "%s:%d: ",__FILE__,__LINE__); fprintf x
 #endif
 
+#if defined(YI_PORT_FILE_REQUIRED)
+#include <YiPort.h>
+#endif
+
 /**
  * Internal structure of an ICU plugin. 
  */

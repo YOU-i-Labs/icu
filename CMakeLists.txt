@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD 11 CACHE STRING "Default C++ standard")
 
 string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" ICU_WINDOWS_STORE)
 
-if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS OR TIZEN_NACL)
+if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS OR TIZEN_NACL OR PS4)
   set(default OFF)
 else()
   set(default ON)
@@ -28,7 +28,7 @@ if(MSVC)
   add_definitions(/utf-8)
 endif()
 
-if(TIZEN_NACL)
+if(TIZEN_NACL OR PS4)
   set(ICU_NO_DYLOAD ON)
 endif()
 
