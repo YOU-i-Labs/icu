@@ -85,7 +85,7 @@ typedef size_t uintptr_t;
 
 #ifdef U_HAVE_NL_LANGINFO_CODESET
     /* Use the predefined value. */
-#elif U_PLATFORM_HAS_WIN32_API || U_PLATFORM == U_PF_ANDROID || U_PLATFORM == U_PF_QNX
+#elif U_PLATFORM_HAS_WIN32_API || U_PLATFORM == U_PF_ANDROID || U_PLATFORM == U_PF_QNX || __ORBIS__
 #   define U_HAVE_NL_LANGINFO_CODESET 0
 #else
 #   define U_HAVE_NL_LANGINFO_CODESET 1
@@ -107,7 +107,7 @@ typedef size_t uintptr_t;
 # if U_PLATFORM_HAS_WINUWP_API == 0
 #   define U_TZSET _tzset
 # endif
-#elif U_PLATFORM == U_PF_OS400
+#elif U_PLATFORM == U_PF_OS400 || __ORBIS__
    /* not defined */
 #else
 #   define U_TZSET tzset
@@ -142,7 +142,7 @@ typedef size_t uintptr_t;
     /* Use the predefined value. */
 #elif U_PLATFORM_USES_ONLY_WIN32_API
 #   define U_TZNAME _tzname
-#elif U_PLATFORM == U_PF_OS400
+#elif U_PLATFORM == U_PF_OS400 || __ORBIS__
    /* not defined */
 #else
 #   define U_TZNAME tzname
@@ -173,7 +173,7 @@ typedef size_t uintptr_t;
  */
 #ifdef U_HAVE_DIRENT_H
     /* Use the predefined value. */
-#elif U_PLATFORM_HAS_WIN32_API
+#elif U_PLATFORM_HAS_WIN32_API || __ORBIS__
 #   define U_HAVE_DIRENT_H 0
 #else
 #   define U_HAVE_DIRENT_H 1
