@@ -42,6 +42,8 @@ option(ICU_BUILD_IO "Build IO library" OFF)
 
 option(ICU_DATA_ARCHIVE_MODE "Output a single icudt*.dat file" OFF)
 
+option(ICU_USE_EXTERNAL_DATA_ARCHIVE "Specifies whether to use an external icudt*.dat file that was not build by this project" OFF)
+
 option(U_NO_DEFAULT_INCLUDE_UTF_HEADERS "..." OFF)
 
 option(U_USING_ICU_NAMESPACE "..." OFF)
