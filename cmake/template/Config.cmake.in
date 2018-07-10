@@ -80,6 +80,7 @@ if(@ICU_BUILD_TOOLS@)
   __icu_set_icupkg_path()
 endif()
 
+if(NOT @ICU_USE_EXTERNAL_DATA_ARCHIVE@)
 if(@ICU_DATA_ARCHIVE_MODE@)
   get_filename_component(
       ICU_DATA_FILE
@@ -94,4 +95,5 @@ if(@ICU_DATA_ARCHIVE_MODE@)
   if(IS_DIRECTORY ${ICU_DATA_FILE})
     message(FATAL_ERROR "Is directory: ${ICU_DATA_FILE}")
   endif()
+endif()
 endif()
