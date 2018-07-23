@@ -9,7 +9,12 @@ HunterGate(
     SHA1 "758836c69d9ecb7a773b8e4b64e25d0fa4e76582"
 )
 
-project(ICU VERSION 55.1 LANGUAGES C CXX ASM)
+project(ICU VERSION 55.1 LANGUAGES C CXX) 
+
+# The PS4 compiler does not properly get detected as supporting assembly. Disable that language requirement when building for PS4 (and using an external data archive).
+if (NOT PS4 OR NOT ICU_USE_EXTERNAL_DATA_ARCHIVE)
+    enable_language(ASM)
+endif()
 
 string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" ICU_WINDOWS_STORE)
 
