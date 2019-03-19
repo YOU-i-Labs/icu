@@ -9,7 +9,12 @@ HunterGate(
     SHA1 "91125b6ac0df9be4c2b7a5695e58d94a0e8a74e3"
 )
 
-project(ICU VERSION 63.1 LANGUAGES C CXX ASM)
+project(ICU VERSION 63.1 LANGUAGES C CXX)
+
+# The PS4 compiler does not properly get detected as supporting assembly. Disable that language requirement when building for PS4 (and using an external data archive).
+if (NOT PS4 OR NOT ICU_USE_EXTERNAL_DATA_ARCHIVE)
+    enable_language(ASM)
+endif()
 
 set(CMAKE_CXX_STANDARD 11 CACHE STRING "Default C++ standard")
 

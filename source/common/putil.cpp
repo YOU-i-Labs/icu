@@ -126,7 +126,7 @@ using namespace Microsoft::WRL::Wrappers;
 #   include <mih/testptr.h> /* For uprv_maximumPtr */
 #elif U_PLATFORM == U_PF_OS390
 #   include "unicode/ucnv.h"   /* Needed for UCNV_SWAP_LFNL_OPTION_STRING */
-#elif U_PLATFORM_IS_DARWIN_BASED || U_PLATFORM_IS_LINUX_BASED || U_PLATFORM == U_PF_BSD || U_PLATFORM == U_PF_SOLARIS
+#elif U_PLATFORM_IS_DARWIN_BASED || U_PLATFORM_IS_LINUX_BASED || U_PLATFORM == U_PF_BSD || U_PLATFORM == U_PF_ORBIS || U_PLATFORM == U_PF_SOLARIS
 #   include <limits.h>
 #   include <unistd.h>
 #   if U_PLATFORM == U_PF_SOLARIS
@@ -1981,6 +1981,11 @@ remapPlatformDependentCodepage(const char *locale, const char *name) {
         name = "UTF-8";
     }
 #elif U_PLATFORM == U_PF_BSD
+    if (uprv_strcmp(name, "CP949") == 0) {
+        /* Remap CP949 to a similar codepage to avoid issues with backslash and won symbol. */
+        name = "EUC-KR";
+    }
+#elif U_PLATFORM == U_PF_ORBIS
     if (uprv_strcmp(name, "CP949") == 0) {
         /* Remap CP949 to a similar codepage to avoid issues with backslash and won symbol. */
         name = "EUC-KR";

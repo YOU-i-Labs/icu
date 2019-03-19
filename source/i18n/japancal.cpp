@@ -72,10 +72,12 @@ static void U_CALLCONV initializeEras(UErrorCode &status) {
         includeTentativeEra = TRUE;
     }
 #else
+#if !defined(__ORBIS__)
     char *envVarVal = getenv(TENTATIVE_ERA_VAR_NAME);
     if (envVarVal != NULL && uprv_stricmp(envVarVal, "true") == 0) {
         includeTentativeEra = TRUE;
     }
+#endif
 #endif
     gJapaneseEraRules = EraRules::createInstance("japanese", includeTentativeEra, status);
     if (U_FAILURE(status)) {

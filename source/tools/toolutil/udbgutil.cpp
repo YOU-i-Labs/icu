@@ -359,6 +359,8 @@ U_CAPI const char *udbg_getPlatform(void)
     return "unknown";
 #elif U_PLATFORM == U_PF_DARWIN
     return "Darwin";
+#elif U_PLATFORM == U_PF_ORBIS
+    return "ORBIS";
 #elif U_PLATFORM == U_PF_BSD
     return "BSD";
 #elif U_PLATFORM == U_PF_QNX

@@ -104,6 +104,7 @@
 #define U_PF_SOLARIS 2600
 /** BSD is a UNIX operating system derivative. @internal */
 #define U_PF_BSD 3000
+#define U_PF_ORBIS 3001
 /** AIX is based on UNIX System V Releases and 4.3 BSD. @internal */
 #define U_PF_AIX 3100
 /** IRIX is based on UNIX System V with BSD extensions. @internal */
@@ -165,6 +166,8 @@
 #   else
 #       define U_PLATFORM U_PF_DARWIN
 #   endif
+#elif defined(__ORBIS__)
+    #define U_PLATFORM U_PF_OSBIS
 #elif defined(BSD) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__MirBSD__)
 #   if defined(__FreeBSD__)
 #       include <sys/endian.h>
