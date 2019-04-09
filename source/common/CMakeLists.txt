@@ -313,7 +313,7 @@ else()
 endif()
 
 if(NOT BUILD_SHARED_LIBS)
-  if(MSVC)
+  if(MSVC OR PS4)
     target_compile_definitions(icuuc PUBLIC U_STATIC_IMPLEMENTATION)
   else()
     target_compile_definitions(icuuc PUBLIC $<BUILD_INTERFACE:U_STATIC_IMPLEMENTATION>)
