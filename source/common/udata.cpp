@@ -76,6 +76,10 @@ might have to #include some other header
 
 U_NAMESPACE_USE
 
+#if U_PLATFORM_HAS_WINUWP_API != 0 && !defined(U_STATIC_IMPLEMENTATION)
+#define U_ICUDATA_LIBRARY_LOAD_DISABLED // Windows UWP Platform does not support dll icu data at this time
+#endif
+
 /*
  *  Forward declarations
  */
@@ -110,11 +114,11 @@ static u_atomic_int32_t gHaveTriedToLoadCommonData = ATOMIC_INT32_T_INITIALIZER(
 static UHashtable  *gCommonDataCache = NULL;  /* Global hash table of opened ICU data files.  */
 static icu::UInitOnce gCommonDataCacheInitOnce = U_INITONCE_INITIALIZER;
 
-#if U_PLATFORM_HAS_WINUWP_API == 0 
+#if !defined(U_ICUDATA_LIBRARY_LOAD_DISABLED)
 static UDataFileAccess  gDataFileAccess = UDATA_DEFAULT_ACCESS;  // Access not synchronized.
                                                                  // Modifying is documented as thread-unsafe.
 #else
-static UDataFileAccess  gDataFileAccess = UDATA_NO_FILES;        // Windows UWP looks in one spot explicitly
+static UDataFileAccess  gDataFileAccess = UDATA_NO_FILES;
 #endif
 
 static UBool U_CALLCONV
@@ -206,7 +210,7 @@ setCommonICUData(UDataMemory *pData,     /*  The new common data.  Belongs to ca
     return didUpdate;
 }
 
-#if U_PLATFORM_HAS_WINUWP_API == 0 
+#if !defined(U_ICUDATA_LIBRARY_LOAD_DISABLED)
 
 static UBool
 setCommonICUDataPointer(const void *pData, UBool /*warn*/, UErrorCode *pErrorCode) {
@@ -632,7 +636,6 @@ U_NAMESPACE_END
 
 /* ==================================================================================*/
 
-
 /*----------------------------------------------------------------------*
  *                                                                      *
  *  Add a static reference to the common data library                   *
@@ -640,7 +643,7 @@ U_NAMESPACE_END
  *      our common data.                                                *
  *                                                                      *
  *----------------------------------------------------------------------*/
-#if U_PLATFORM_HAS_WINUWP_API == 0 // Windows UWP Platform does not support dll icu data at this time
+#if !defined(U_ICUDATA_LIBRARY_LOAD_DISABLED)
 extern "C" const DataHeader U_DATA_API U_ICUDATA_ENTRY_POINT;
 #endif
 
@@ -690,7 +693,7 @@ openCommonData(const char *path,          /*  Path from OpenChoice?          */
             if(gCommonICUDataArray[commonDataIndex] != NULL) {
                 return gCommonICUDataArray[commonDataIndex];
             }
-#if U_PLATFORM_HAS_WINUWP_API == 0 // Windows UWP Platform does not support dll icu data at this time
+#if !defined(U_ICUDATA_LIBRARY_LOAD_DISABLED)
             int32_t i;
             for(i = 0; i < commonDataIndex; ++i) {
                 if(gCommonICUDataArray[i]->pHeader == &U_ICUDATA_ENTRY_POINT) {
@@ -714,7 +717,7 @@ openCommonData(const char *path,          /*  Path from OpenChoice?          */
             setCommonICUDataPointer(uprv_getICUData_conversion(), FALSE, pErrorCode);
         }
         */
-#if U_PLATFORM_HAS_WINUWP_API == 0 // Windows UWP Platform does not support dll icu data at this time
+#if !defined(U_ICUDATA_LIBRARY_LOAD_DISABLED)
         setCommonICUDataPointer(&U_ICUDATA_ENTRY_POINT, FALSE, pErrorCode);
         {
             Mutex lock;
@@ -1276,12 +1279,11 @@ doOpenChoice(const char *path, const char *type, const char *name,
     fprintf(stderr, " tocEntryPath = %s\n", tocEntryName.data());
 #endif
 
-#if U_PLATFORM_HAS_WINUWP_API == 0 // Windows UWP Platform does not support dll icu data at this time
+#if !defined(U_ICUDATA_LIBRARY_LOAD_DISABLED)
     if(path == NULL) {
         path = COMMON_DATA_NAME; /* "icudt26e" */
     }
 #else
-    // Windows UWP expects only a single data file.
     path = COMMON_DATA_NAME; /* "icudt26e" */
 #endif
 
