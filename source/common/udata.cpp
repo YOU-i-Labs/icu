@@ -477,8 +477,7 @@ UDataPathIterator::UDataPathIterator(const char *inPath, const char *pkg,
     /* pathBuffer will hold the output path strings returned by this iterator */
 
 #ifdef UDATA_DEBUG
-    fprintf(stderr, "%p: init %s -> [path=%s], [base=%s], [suff=%s], [itempath=%s], [nextpath=%s], [checklast4=%s]\n",
-            iter,
+    fprintf(stderr, "init %s -> [path=%s], [base=%s], [suff=%s], [itempath=%s], [nextpath=%s], [checklast4=%s]\n",
             item,
             path,
             basename,
@@ -517,16 +516,25 @@ const char *UDataPathIterator::next(UErrorCode *pErrorCode)
             nextPath = path; /* start with regular path next tm. */
             pathLen = (int32_t)uprv_strlen(currentPath);
         } else {
-            /* fix up next for next time */
-            nextPath = uprv_strchr(currentPath, U_PATH_SEP_CHAR);
-            if(nextPath == NULL) {
-                /* segment: entire path */
-                pathLen = (int32_t)uprv_strlen(currentPath); 
-            } else {
-                /* segment: until next segment */
-                pathLen = (int32_t)(nextPath - currentPath);
-                /* skip divider */
-                nextPath ++;
+
+            std::string tempPath(currentPath);
+            if (tempPath.find("pkg:") == 0)
+            {
+                pathLen = (int32_t)uprv_strlen(currentPath);
+                nextPath = NULL;
+            }
+            else {
+                /* fix up next for next time */
+                nextPath = uprv_strchr(currentPath, U_PATH_SEP_CHAR);
+                if(nextPath == NULL) {
+                    /* segment: entire path */
+                    pathLen = (int32_t)uprv_strlen(currentPath); 
+                } else {
+                    /* segment: until next segment */
+                    pathLen = (int32_t)(nextPath - currentPath);
+                    /* skip divider */
+                    nextPath ++;
+                }
             }
         }
 
