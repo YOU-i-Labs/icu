@@ -662,7 +662,7 @@ le_bool ParagraphLayout::isDone() const
     return fLineEnd >= fCharCount;
 }
 
-ParagraphLayout::Line *ParagraphLayout::nextLine(float width)
+ParagraphLayout::Line *ParagraphLayout::nextLine(float width, UBreakIteratorType kind)
 {
     if (isDone()) {
         return NULL;
@@ -689,7 +689,7 @@ ParagraphLayout::Line *ParagraphLayout::nextLine(float width)
             glyph += 1;
         }
 
-        fLineEnd = previousBreak(fGlyphToCharMap[glyph]);
+        fLineEnd = previousBreak(fGlyphToCharMap[glyph], kind);
 
         // If this break is at or before the last one,
         // find a glyph, starting at the one which didn't
@@ -979,7 +979,7 @@ le_bool ParagraphLayout::isComplex(UScriptCode script)
     return complexTable[script];
 }
 
-le_int32 ParagraphLayout::previousBreak(le_int32 charIndex)
+le_int32 ParagraphLayout::previousBreak(le_int32 charIndex, UBreakIteratorType kind)
 {
     // skip over any whitespace or control characters,
     // because they can hang in the margin.
@@ -995,7 +995,19 @@ le_int32 ParagraphLayout::previousBreak(le_int32 charIndex)
         UCharCharacterIterator *iter = new UCharCharacterIterator(fChars, fCharCount);
         UErrorCode status = U_ZERO_ERROR;
 
-        fBreakIterator = BreakIterator::createLineInstance(thai, status);
+        // Set the break iterator; default is line breaks
+        if (kind == UBreakIteratorType::UBRK_CHARACTER) {
+            fBreakIterator = BreakIterator::createCharacterInstance(thai, status);
+        } else if (kind == UBreakIteratorType::UBRK_WORD) {
+            fBreakIterator = BreakIterator::createWordInstance(thai, status);
+        } else if (kind == UBreakIteratorType::UBRK_SENTENCE) {
+            fBreakIterator = BreakIterator::createSentenceInstance(thai, status);
+        } else if (kind == UBreakIteratorType::UBRK_TITLE) {
+            fBreakIterator = BreakIterator::createTitleInstance(thai, status);
+        } else {
+            fBreakIterator = BreakIterator::createLineInstance(thai, status);
+        }
+        
         fBreakIterator->adoptText(iter);
     }
 
