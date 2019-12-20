@@ -528,6 +528,9 @@ public:
      *              to zero, a <code>ParagraphLayout::Line</code> object representing the
      *              rest of the paragraph will be returned.
      *
+     * @param kind denotes the type of break iterator used when truncating line to fit in in width.
+     *             Default is UBRK_LINE to stay in line with stock ICU.
+     *
      * @return a <code>ParagraphLayout::Line</code> object which represents the line. The caller
      *         is responsible for deleting the object. Returns <code>NULL</code> if there are no
      *         more lines in the paragraph.
@@ -536,7 +539,7 @@ public:
      *
      * @stable ICU 3.2
      */
-    Line *nextLine(float width);
+    Line *nextLine(float width, UBreakIteratorType kind = UBreakIteratorType::UBRK_LINE);
 
     /**
      * ICU "poor man's RTTI", returns a UClassID for this class.
@@ -599,7 +602,7 @@ private:
 
     static le_bool isComplex(UScriptCode script);
 
-    le_int32 previousBreak(le_int32 charIndex);
+    le_int32 previousBreak(le_int32 charIndex, UBreakIteratorType kind = UBreakIteratorType::UBRK_LINE);
 
 
     const LEUnicode *fChars;
