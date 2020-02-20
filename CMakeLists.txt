@@ -12,13 +12,13 @@ HunterGate(
 project(ICU VERSION 55.1 LANGUAGES C CXX) 
 
 # The PS4 compiler does not properly get detected as supporting assembly. Disable that language requirement when building for PS4 (and using an external data archive).
-if (NOT PS4 OR NOT ICU_USE_EXTERNAL_DATA_ARCHIVE)
+if (NOT (PS4 OR PS5) OR NOT ICU_USE_EXTERNAL_DATA_ARCHIVE)
     enable_language(ASM)
 endif()
 
 string(COMPARE EQUAL "${CMAKE_SYSTEM_NAME}" "WindowsStore" ICU_WINDOWS_STORE)
 
-if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS OR TIZEN_NACL OR PS4)
+if(IOS OR ANDROID OR ICU_WINDOWS_STORE OR TVOS OR TIZEN_NACL OR PS4 OR PS5)
   set(default OFF)
 else()
   set(default ON)
@@ -30,7 +30,7 @@ if(MSVC)
   add_definitions(-DU_ATTRIBUTE_DEPRECATED=)
 endif()
 
-if(TIZEN_NACL OR PS4)
+if(TIZEN_NACL OR PS4 OR PS5)
   set(ICU_NO_DYLOAD ON)
 endif()
 

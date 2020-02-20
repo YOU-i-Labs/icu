@@ -59,7 +59,7 @@
 /* #include <stdint.h>   */         /* C99 standard integers           */
   #endif
   #include <stdio.h>               /* for printf, etc.                */
-#if !defined(__ORBIS__)
+#if !defined(__ORBIS__) && !defined(__PROSPERO__)
   #include <signal.h>              /* for traps                       */
 #endif
 
