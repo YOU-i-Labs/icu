@@ -118,7 +118,7 @@ NumberingSystem::createInstance(const Locale & inLocale, UErrorCode& status) {
 
     UBool nsResolved = TRUE;
     UBool usingFallback = FALSE;
-    char buffer[ULOC_KEYWORDS_CAPACITY];
+    char buffer[ULOC_KEYWORDS_CAPACITY] = "";
     int32_t count = inLocale.getKeywordValue("numbers", buffer, sizeof(buffer), status);
     if (U_FAILURE(status) || status == U_STRING_NOT_TERMINATED_WARNING) {
         // the "numbers" keyword exceeds ULOC_KEYWORDS_CAPACITY; ignore and use default.
@@ -314,7 +314,7 @@ U_CFUNC void initNumsysNames(UErrorCode &status) {
         const char *nsName = ures_getKey(nsCurrent.getAlias());
         LocalPointer<UnicodeString> newElem(new UnicodeString(nsName, -1, US_INV), status);
         if (U_SUCCESS(status)) {
-            numsysNames->addElement(newElem.getAlias(), status);
+            numsysNames->addElementX(newElem.getAlias(), status);
             if (U_SUCCESS(status)) {
                 newElem.orphan(); // on success, the numsysNames vector owns newElem.
             }

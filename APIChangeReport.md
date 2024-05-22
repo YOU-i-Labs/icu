@@ -5,522 +5,659 @@
  License & terms of use: http://www.unicode.org/copyright.html
 -->
 
-# ICU4C API Comparison: ICU 65 with ICU 66
+# ICU4C API Comparison: ICU 69 with ICU 70
 
 > _Note_ Markdown format of this document is new for ICU 65.
 
-- [Removed from ICU 65](#removed)
-- [Deprecated or Obsoleted in ICU 66](#deprecated)
-- [Changed in  ICU 66](#changed)
-- [Promoted to stable in ICU 66](#promoted)
-- [Added in ICU 66](#added)
-- [Other existing drafts in ICU 66](#other)
+- [Removed from ICU 69](#removed)
+- [Deprecated or Obsoleted in ICU 70](#deprecated)
+- [Changed in  ICU 70](#changed)
+- [Promoted to stable in ICU 70](#promoted)
+- [Added in ICU 70](#added)
+- [Other existing drafts in ICU 70](#other)
 - [Signature Simplifications](#simplifications)
 
 ## Removed
 
-Removed from ICU 65
+Removed from ICU 69
   
-| File | API | ICU 65 | ICU 66 |
+| File | API | ICU 69 | ICU 70 |
 |---|---|---|---|
+| tmutfmt.h | bool icu::TimeUnitFormat::operator!=(const Format&amp;) const |  DeprecatedICU 53 | (missing)
 
 ## Deprecated
 
-Deprecated or Obsoleted in ICU 66
+Deprecated or Obsoleted in ICU 70
   
-| File | API | ICU 65 | ICU 66 |
+| File | API | ICU 69 | ICU 70 |
 |---|---|---|---|
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration() |  StableICU 2.4 | DeprecatedICU 70
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration(const char*) |  StableICU 2.4 | DeprecatedICU 70
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration(int32_t) |  StableICU 2.4 | DeprecatedICU 70
 
 ## Changed
 
-Changed in  ICU 66 (old, new)
+Changed in  ICU 70 (old, new)
 
 
   
-| File | API | ICU 65 | ICU 66 |
+| File | API | ICU 69 | ICU 70 |
 |---|---|---|---|
+| dtitvfmt.h | UDisplayContext icu::DateIntervalFormat::getContext(UDisplayContextType, UErrorCode&amp;) const |  Draft→StableICU 68
+| dtitvfmt.h | void icu::DateIntervalFormat::setContext(UDisplayContext, UErrorCode&amp;) |  Draft→StableICU 68
+| localematcher.h | Builder&amp; icu::LocaleMatcher::Builder::setMaxDistance(const Locale&amp;, const Locale&amp;) |  Draft→StableICU 68
+| localematcher.h | Builder&amp; icu::LocaleMatcher::Builder::setNoDefaultLocale() |  Draft→StableICU 68
+| localematcher.h | bool icu::LocaleMatcher::isMatch(const Locale&amp;, const Locale&amp;, UErrorCode&amp;) const |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getCandela() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDessertSpoon() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDessertSpoonImperial() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDot() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDram() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDrop() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getEarthRadius() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getGrain() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getJigger() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getLumen() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getPinch() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getQuartImperial() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createCandela(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDessertSpoon(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDessertSpoonImperial(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDot(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDram(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDrop(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createEarthRadius(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createGrain(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createJigger(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createLumen(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPinch(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createQuartImperial(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | std::pair&lt; LocalArray&lt; MeasureUnit &gt;, int32_t &gt; icu::MeasureUnit::splitToSingleUnits(UErrorCode&amp;) const |  Draft→StableICU 68
+| numberformatter.h | Derived icu::number::NumberFormatterSettings&lt; Derived &gt;::usage(StringPiece) const&amp; |  Draft→StableICU 68
+| numberformatter.h | Derived icu::number::NumberFormatterSettings&lt; Derived &gt;::usage(StringPiece)&amp;&amp; |  Draft→StableICU 68
+| numberformatter.h | MeasureUnit icu::number::FormattedNumber::getOutputUnit(UErrorCode&amp;) const |  Draft→StableICU 68
+| numberrangeformatter.h | std::pair&lt; StringClass, StringClass &gt; icu::number::FormattedNumberRange::getDecimalNumbers(UErrorCode&amp;) const |  Draft→StableICU 68
+| plurrule.h | UnicodeString icu::PluralRules::select(const number::FormattedNumberRange&amp;, UErrorCode&amp;) const |  Draft→StableICU 68
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration() |  StableICU 2.4 | DeprecatedICU 70
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration(const char*) |  StableICU 2.4 | DeprecatedICU 70
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration(int32_t) |  StableICU 2.4 | DeprecatedICU 70
+| ucurr.h | <tt>enum</tt> UCurrNameStyle::UCURR_FORMAL_SYMBOL_NAME |  Draft→StableICU 68
+| ucurr.h | <tt>enum</tt> UCurrNameStyle::UCURR_VARIANT_SYMBOL_NAME |  Draft→StableICU 68
+| udateintervalformat.h | UDisplayContext udtitvfmt_getContext(const UDateIntervalFormat*, UDisplayContextType, UErrorCode*) |  Draft→StableICU 68
+| udateintervalformat.h | void udtitvfmt_setContext(UDateIntervalFormat*, UDisplayContext, UErrorCode*) |  Draft→StableICU 68
+| unum.h | <tt>enum</tt> UNumberFormatMinimumGroupingDigits::UNUM_MINIMUM_GROUPING_DIGITS_AUTO |  Draft→StableICU 68
+| unum.h | <tt>enum</tt> UNumberFormatMinimumGroupingDigits::UNUM_MINIMUM_GROUPING_DIGITS_MIN2 |  Draft→StableICU 68
+| unumberformatter.h | <tt>enum</tt> UNumberUnitWidth::UNUM_UNIT_WIDTH_FORMAL |  Draft→StableICU 68
+| unumberformatter.h | <tt>enum</tt> UNumberUnitWidth::UNUM_UNIT_WIDTH_VARIANT |  Draft→StableICU 68
+| unumberformatter.h | int32_t unumf_resultToDecimalNumber(const UFormattedNumber*, char*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | UFormattedNumberRange* unumrf_openResult(UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | UNumberRangeFormatter* unumrf_openForSkeletonWithCollapseAndIdentityFallback(const UChar*, int32_t, UNumberRangeCollapse, UNumberRangeIdentityFallback, const char*, UParseError*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | UNumberRangeIdentityResult unumrf_resultGetIdentityResult(const UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | const UFormattedValue* unumrf_resultAsValue(const UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | int32_t unumrf_resultGetFirstDecimalNumber(const UFormattedNumberRange*, char*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | int32_t unumrf_resultGetSecondDecimalNumber(const UFormattedNumberRange*, char*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_close(UNumberRangeFormatter*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_closeResult(UFormattedNumberRange*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_formatDecimalRange(const UNumberRangeFormatter*, const char*, int32_t, const char*, int32_t, UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_formatDoubleRange(const UNumberRangeFormatter*, double, double, UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| upluralrules.h | int32_t uplrules_selectForRange(const UPluralRules*, const struct UFormattedNumberRange*, UChar*, int32_t, UErrorCode*) |  Draft→StableICU 68
 
 ## Promoted
 
-Promoted to stable in ICU 66
+Promoted to stable in ICU 70
   
-| File | API | ICU 65 | ICU 66 |
+| File | API | ICU 69 | ICU 70 |
 |---|---|---|---|
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_CHORASMIAN |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_DIVES_AKURU |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_KHITAN_SMALL_SCRIPT |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_LISU_SUPPLEMENT |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_SYMBOLS_FOR_LEGACY_COMPUTING |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_TANGUT_SUPPLEMENT |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_YEZIDI |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UIndicPositionalCategory::U_INPC_TOP_AND_BOTTOM_AND_LEFT |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_CHORASMIAN |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_DIVES_AKURU |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_KHITAN_SMALL_SCRIPT |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_YEZIDI |  (missing) | StableICU 66| *(Born Stable)* |
+| dtitvfmt.h | UDisplayContext icu::DateIntervalFormat::getContext(UDisplayContextType, UErrorCode&amp;) const |  Draft→StableICU 68
+| dtitvfmt.h | void icu::DateIntervalFormat::setContext(UDisplayContext, UErrorCode&amp;) |  Draft→StableICU 68
+| localematcher.h | Builder&amp; icu::LocaleMatcher::Builder::setMaxDistance(const Locale&amp;, const Locale&amp;) |  Draft→StableICU 68
+| localematcher.h | Builder&amp; icu::LocaleMatcher::Builder::setNoDefaultLocale() |  Draft→StableICU 68
+| localematcher.h | bool icu::LocaleMatcher::isMatch(const Locale&amp;, const Locale&amp;, UErrorCode&amp;) const |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getCandela() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDessertSpoon() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDessertSpoonImperial() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDot() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDram() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getDrop() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getEarthRadius() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getGrain() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getJigger() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getLumen() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getPinch() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getQuartImperial() |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createCandela(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDessertSpoon(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDessertSpoonImperial(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDot(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDram(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDrop(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createEarthRadius(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createGrain(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createJigger(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createLumen(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPinch(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createQuartImperial(UErrorCode&amp;) |  Draft→StableICU 68
+| measunit.h | std::pair&lt; LocalArray&lt; MeasureUnit &gt;, int32_t &gt; icu::MeasureUnit::splitToSingleUnits(UErrorCode&amp;) const |  Draft→StableICU 68
+| numberformatter.h | Derived icu::number::NumberFormatterSettings&lt; Derived &gt;::usage(StringPiece) const&amp; |  Draft→StableICU 68
+| numberformatter.h | Derived icu::number::NumberFormatterSettings&lt; Derived &gt;::usage(StringPiece)&amp;&amp; |  Draft→StableICU 68
+| numberformatter.h | MeasureUnit icu::number::FormattedNumber::getOutputUnit(UErrorCode&amp;) const |  Draft→StableICU 68
+| numberrangeformatter.h | std::pair&lt; StringClass, StringClass &gt; icu::number::FormattedNumberRange::getDecimalNumbers(UErrorCode&amp;) const |  Draft→StableICU 68
+| plurrule.h | UnicodeString icu::PluralRules::select(const number::FormattedNumberRange&amp;, UErrorCode&amp;) const |  Draft→StableICU 68
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration(UErrorCode&amp;) |  (missing) | StableICU 70| *(Born Stable)* |
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumerationForRawOffset(int32_t, UErrorCode&amp;) |  (missing) | StableICU 70| *(Born Stable)* |
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumerationForRegion(const char*, UErrorCode&amp;) |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_ARABIC_EXTENDED_B |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_CYPRO_MINOAN |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_ETHIOPIC_EXTENDED_B |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_KANA_EXTENDED_B |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_LATIN_EXTENDED_F |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_LATIN_EXTENDED_G |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_OLD_UYGHUR |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_TANGSA |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_TOTO |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_VITHKUQI |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_ZNAMENNY_MUSICAL_NOTATION |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UJoiningGroup::U_JG_THIN_YEH |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UJoiningGroup::U_JG_VERTICAL_TAIL |  (missing) | StableICU 70| *(Born Stable)* |
+| ucurr.h | <tt>enum</tt> UCurrNameStyle::UCURR_FORMAL_SYMBOL_NAME |  Draft→StableICU 68
+| ucurr.h | <tt>enum</tt> UCurrNameStyle::UCURR_VARIANT_SYMBOL_NAME |  Draft→StableICU 68
+| udateintervalformat.h | UDisplayContext udtitvfmt_getContext(const UDateIntervalFormat*, UDisplayContextType, UErrorCode*) |  Draft→StableICU 68
+| udateintervalformat.h | void udtitvfmt_setContext(UDateIntervalFormat*, UDisplayContext, UErrorCode*) |  Draft→StableICU 68
+| unum.h | <tt>enum</tt> UNumberFormatMinimumGroupingDigits::UNUM_MINIMUM_GROUPING_DIGITS_AUTO |  Draft→StableICU 68
+| unum.h | <tt>enum</tt> UNumberFormatMinimumGroupingDigits::UNUM_MINIMUM_GROUPING_DIGITS_MIN2 |  Draft→StableICU 68
+| unumberformatter.h | <tt>enum</tt> UNumberUnitWidth::UNUM_UNIT_WIDTH_FORMAL |  Draft→StableICU 68
+| unumberformatter.h | <tt>enum</tt> UNumberUnitWidth::UNUM_UNIT_WIDTH_VARIANT |  Draft→StableICU 68
+| unumberformatter.h | int32_t unumf_resultToDecimalNumber(const UFormattedNumber*, char*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | UFormattedNumberRange* unumrf_openResult(UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | UNumberRangeFormatter* unumrf_openForSkeletonWithCollapseAndIdentityFallback(const UChar*, int32_t, UNumberRangeCollapse, UNumberRangeIdentityFallback, const char*, UParseError*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | UNumberRangeIdentityResult unumrf_resultGetIdentityResult(const UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | const UFormattedValue* unumrf_resultAsValue(const UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | int32_t unumrf_resultGetFirstDecimalNumber(const UFormattedNumberRange*, char*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | int32_t unumrf_resultGetSecondDecimalNumber(const UFormattedNumberRange*, char*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_close(UNumberRangeFormatter*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_closeResult(UFormattedNumberRange*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_formatDecimalRange(const UNumberRangeFormatter*, const char*, int32_t, const char*, int32_t, UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| unumberrangeformatter.h | void unumrf_formatDoubleRange(const UNumberRangeFormatter*, double, double, UFormattedNumberRange*, UErrorCode*) |  Draft→StableICU 68
+| upluralrules.h | int32_t uplrules_selectForRange(const UPluralRules*, const struct UFormattedNumberRange*, UChar*, int32_t, UErrorCode*) |  Draft→StableICU 68
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_CYPRO_MINOAN |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_OLD_UYGHUR |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_TANGSA |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_TOTO |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_VITHKUQI |  (missing) | StableICU 70| *(Born Stable)* |
+| utypes.h | <tt>enum</tt> UErrorCode::U_INPUT_TOO_LONG_ERROR |  (missing) | StableICU 68
 
 ## Added
 
-Added in ICU 66
+Added in ICU 70
   
-| File | API | ICU 65 | ICU 66 |
+| File | API | ICU 69 | ICU 70 |
 |---|---|---|---|
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_CHORASMIAN |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_CJK_UNIFIED_IDEOGRAPHS_EXTENSION_G |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_DIVES_AKURU |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_KHITAN_SMALL_SCRIPT |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_LISU_SUPPLEMENT |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_SYMBOLS_FOR_LEGACY_COMPUTING |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_TANGUT_SUPPLEMENT |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_YEZIDI |  (missing) | StableICU 66| *(Born Stable)* |
-| uchar.h | <tt>enum</tt> UIndicPositionalCategory::U_INPC_TOP_AND_BOTTOM_AND_LEFT |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_CHORASMIAN |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_DIVES_AKURU |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_KHITAN_SMALL_SCRIPT |  (missing) | StableICU 66| *(Born Stable)* |
-| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_YEZIDI |  (missing) | StableICU 66| *(Born Stable)* |
+| dcfmtsym.h | <tt>enum</tt>  							icu::DecimalFormatSymbols::ENumberFormatSymbol::kApproximatelySignSymbol |  (missing) | Internal
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getItem() |  (missing) | DraftICU 70
+| measunit.h | <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilowattHourPer100Kilometer() |  (missing) | DraftICU 70
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createItem(UErrorCode&amp;) |  (missing) | DraftICU 70
+| measunit.h | <tt>static</tt> MeasureUnit* icu::MeasureUnit::createKilowattHourPer100Kilometer(UErrorCode&amp;) |  (missing) | DraftICU 70
+| numberformatter.h | const DecimalFormatSymbols* icu::number::LocalizedNumberFormatter::getDecimalFormatSymbols() const |  (missing) | Internal
+| numberrangeformatter.h | icu::number::FormattedNumberRange::FormattedNumberRange() |  (missing) | DraftICU 70
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumeration(UErrorCode&amp;) |  (missing) | StableICU 70| *(Born Stable)* |
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumerationForRawOffset(int32_t, UErrorCode&amp;) |  (missing) | StableICU 70| *(Born Stable)* |
+| timezone.h | <tt>static</tt> StringEnumeration* icu::TimeZone::createEnumerationForRegion(const char*, UErrorCode&amp;) |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | bool u_stringHasBinaryProperty(const UChar*, int32_t, UProperty) |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_ARABIC_EXTENDED_B |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_CYPRO_MINOAN |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_ETHIOPIC_EXTENDED_B |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_KANA_EXTENDED_B |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_LATIN_EXTENDED_F |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_LATIN_EXTENDED_G |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_OLD_UYGHUR |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_TANGSA |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_TOTO |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS_EXTENDED_A |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_VITHKUQI |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UBlockCode::UBLOCK_ZNAMENNY_MUSICAL_NOTATION |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UJoiningGroup::U_JG_THIN_YEH |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UJoiningGroup::U_JG_VERTICAL_TAIL |  (missing) | StableICU 70| *(Born Stable)* |
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_BASIC_EMOJI |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_EMOJI_KEYCAP_SEQUENCE |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_RGI_EMOJI_FLAG_SEQUENCE |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_RGI_EMOJI_MODIFIER_SEQUENCE |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_RGI_EMOJI_TAG_SEQUENCE |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_RGI_EMOJI_ZWJ_SEQUENCE |  (missing) | DraftICU 70
+| uchar.h | <tt>enum</tt> UProperty::UCHAR_RGI_EMOJI |  (missing) | DraftICU 70
+| udat.h | <tt>enum</tt> UDateFormatSymbolType::UDAT_NARROW_QUARTERS |  (missing) | DraftICU 70
+| udat.h | <tt>enum</tt> UDateFormatSymbolType::UDAT_STANDALONE_NARROW_QUARTERS |  (missing) | DraftICU 70
+| uniset.h | bool icu::UnicodeSet::hasStrings() const |  (missing) | DraftICU 70
+| unum.h | <tt>enum</tt> UNumberFormatSymbol::UNUM_APPROXIMATELY_SIGN_SYMBOL |  (missing) | Internal
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_CYPRO_MINOAN |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_OLD_UYGHUR |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_TANGSA |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_TOTO |  (missing) | StableICU 70| *(Born Stable)* |
+| uscript.h | <tt>enum</tt> UScriptCode::USCRIPT_VITHKUQI |  (missing) | StableICU 70| *(Born Stable)* |
+| uset.h | bool uset_hasStrings(const USet*) |  (missing) | DraftICU 70
+| uset.h | int32_t uset_getRangeCount(const USet*) |  (missing) | DraftICU 70
+| usetiter.h | UnicodeSetIterator&amp; icu::UnicodeSetIterator::skipToStrings() |  (missing) | DraftICU 70
+| utypes.h | <tt>enum</tt> UErrorCode::U_INPUT_TOO_LONG_ERROR |  (missing) | StableICU 68
 
 ## Other
 
-Other existing drafts in ICU 66
+Other existing drafts in ICU 70
 
-| File | API | ICU 65 | ICU 66 |
+| File | API | ICU 69 | ICU 70 |
 |---|---|---|---|
-| bytestrie.h |  BytesTrie&amp; icu::BytesTrie::resetToState64(uint64_t) | DraftICU 65 | 
-| bytestrie.h |  uint64_t icu::BytesTrie::getState64() const | DraftICU 65 | 
-| currunit.h |  icu::CurrencyUnit::CurrencyUnit(StringPiece, UErrorCode&amp;) | DraftICU 64 | 
-| decimfmt.h |  UBool icu::DecimalFormat::isFormatFailIfMoreThanMaxDigits() const | DraftICU 64 | 
-| decimfmt.h |  UBool icu::DecimalFormat::isParseCaseSensitive() const | DraftICU 64 | 
-| decimfmt.h |  UBool icu::DecimalFormat::isParseNoExponent() const | DraftICU 64 | 
-| decimfmt.h |  UBool icu::DecimalFormat::isSignAlwaysShown() const | DraftICU 64 | 
-| decimfmt.h |  const number::LocalizedNumberFormatter* icu::DecimalFormat::toNumberFormatter(UErrorCode&amp;) const | DraftICU 64 | 
-| decimfmt.h |  int32_t icu::DecimalFormat::getMinimumGroupingDigits() const | DraftICU 64 | 
-| decimfmt.h |  void icu::DecimalFormat::setFormatFailIfMoreThanMaxDigits(UBool) | DraftICU 64 | 
-| decimfmt.h |  void icu::DecimalFormat::setMinimumGroupingDigits(int32_t) | DraftICU 64 | 
-| decimfmt.h |  void icu::DecimalFormat::setParseCaseSensitive(UBool) | DraftICU 64 | 
-| decimfmt.h |  void icu::DecimalFormat::setParseNoExponent(UBool) | DraftICU 64 | 
-| decimfmt.h |  void icu::DecimalFormat::setSignAlwaysShown(UBool) | DraftICU 64 | 
-| dtitvfmt.h |  Appendable&amp; icu::FormattedDateInterval::appendTo(Appendable&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| dtitvfmt.h |  FormattedDateInterval icu::DateIntervalFormat::formatToValue(Calendar&amp;, Calendar&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| dtitvfmt.h |  FormattedDateInterval icu::DateIntervalFormat::formatToValue(const DateInterval&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| dtitvfmt.h |  FormattedDateInterval&amp; icu::FormattedDateInterval::operator=(FormattedDateInterval&amp;&amp;) | DraftICU 64 | 
-| dtitvfmt.h |  UBool icu::FormattedDateInterval::nextPosition(ConstrainedFieldPosition&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| dtitvfmt.h |  UnicodeString icu::FormattedDateInterval::toString(UErrorCode&amp;) const | DraftICU 64 | 
-| dtitvfmt.h |  UnicodeString icu::FormattedDateInterval::toTempString(UErrorCode&amp;) const | DraftICU 64 | 
-| dtitvfmt.h |  icu::FormattedDateInterval::FormattedDateInterval() | DraftICU 64 | 
-| dtitvfmt.h |  icu::FormattedDateInterval::FormattedDateInterval(FormattedDateInterval&amp;&amp;) | DraftICU 64 | 
-| dtitvfmt.h |  icu::FormattedDateInterval::~FormattedDateInterval() | DraftICU 64 | 
-| formattedvalue.h |  Appendable&amp; icu::FormattedValue::appendTo(Appendable&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| formattedvalue.h |  UBool icu::ConstrainedFieldPosition::matchesField(int32_t, int32_t) const | DraftICU 64 | 
-| formattedvalue.h |  UBool icu::FormattedValue::nextPosition(ConstrainedFieldPosition&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| formattedvalue.h |  UnicodeString icu::FormattedValue::toString(UErrorCode&amp;) const | DraftICU 64 | 
-| formattedvalue.h |  UnicodeString icu::FormattedValue::toTempString(UErrorCode&amp;) const | DraftICU 64 | 
-| formattedvalue.h |  icu::ConstrainedFieldPosition::ConstrainedFieldPosition() | DraftICU 64 | 
-| formattedvalue.h |  icu::ConstrainedFieldPosition::~ConstrainedFieldPosition() | DraftICU 64 | 
-| formattedvalue.h |  icu::FormattedValue::~FormattedValue() | DraftICU 64 | 
-| formattedvalue.h |  int32_t icu::ConstrainedFieldPosition::getCategory() const | DraftICU 64 | 
-| formattedvalue.h |  int32_t icu::ConstrainedFieldPosition::getField() const | DraftICU 64 | 
-| formattedvalue.h |  int32_t icu::ConstrainedFieldPosition::getLimit() const | DraftICU 64 | 
-| formattedvalue.h |  int32_t icu::ConstrainedFieldPosition::getStart() const | DraftICU 64 | 
-| formattedvalue.h |  int64_t icu::ConstrainedFieldPosition::getInt64IterationContext() const | DraftICU 64 | 
-| formattedvalue.h |  void icu::ConstrainedFieldPosition::constrainCategory(int32_t) | DraftICU 64 | 
-| formattedvalue.h |  void icu::ConstrainedFieldPosition::constrainField(int32_t, int32_t) | DraftICU 64 | 
-| formattedvalue.h |  void icu::ConstrainedFieldPosition::reset() | DraftICU 64 | 
-| formattedvalue.h |  void icu::ConstrainedFieldPosition::setInt64IterationContext(int64_t) | DraftICU 64 | 
-| formattedvalue.h |  void icu::ConstrainedFieldPosition::setState(int32_t, int32_t, int32_t, int32_t) | DraftICU 64 | 
-| listformatter.h |  Appendable&amp; icu::FormattedList::appendTo(Appendable&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| listformatter.h |  FormattedList icu::ListFormatter::formatStringsToValue(const UnicodeString items[], int32_t, UErrorCode&amp;) const | DraftICU 64 | 
-| listformatter.h |  FormattedList&amp; icu::FormattedList::operator=(FormattedList&amp;&amp;) | DraftICU 64 | 
-| listformatter.h |  UBool icu::FormattedList::nextPosition(ConstrainedFieldPosition&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| listformatter.h |  UnicodeString icu::FormattedList::toString(UErrorCode&amp;) const | DraftICU 64 | 
-| listformatter.h |  UnicodeString icu::FormattedList::toTempString(UErrorCode&amp;) const | DraftICU 64 | 
-| listformatter.h |  UnicodeString&amp; icu::ListFormatter::format(const UnicodeString items[], int32_t, UnicodeString&amp;, FieldPositionIterator*, UErrorCode&amp;) const | DraftICU 63 | 
-| listformatter.h |  icu::FormattedList::FormattedList() | DraftICU 64 | 
-| listformatter.h |  icu::FormattedList::FormattedList(FormattedList&amp;&amp;) | DraftICU 64 | 
-| listformatter.h |  icu::FormattedList::~FormattedList() | DraftICU 64 | 
-| localebuilder.h |  Locale icu::LocaleBuilder::build(UErrorCode&amp;) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::addUnicodeLocaleAttribute(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::clear() | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::clearExtensions() | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::removeUnicodeLocaleAttribute(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setExtension(char, StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setLanguage(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setLanguageTag(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setLocale(const Locale&amp;) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setRegion(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setScript(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setUnicodeLocaleKeyword(StringPiece, StringPiece) | DraftICU 64 | 
-| localebuilder.h |  LocaleBuilder&amp; icu::LocaleBuilder::setVariant(StringPiece) | DraftICU 64 | 
-| localebuilder.h |  UBool icu::LocaleBuilder::copyErrorTo(UErrorCode&amp;) const | DraftICU 65 | 
-| localebuilder.h |  icu::LocaleBuilder::LocaleBuilder() | DraftICU 64 | 
-| localebuilder.h |  icu::LocaleBuilder::~LocaleBuilder() | DraftICU 64 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::addSupportedLocale(const Locale&amp;) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::operator=(Builder&amp;&amp;) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setDefaultLocale(const Locale*) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setDemotionPerDesiredLocale(ULocMatchDemotion) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setFavorSubtag(ULocMatchFavorSubtag) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setSupportedLocales(Iter, Iter) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setSupportedLocales(Locale::Iterator&amp;) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setSupportedLocalesFromListString(StringPiece) | DraftICU 65 | 
-| localematcher.h |  Builder&amp; icu::LocaleMatcher::Builder::setSupportedLocalesViaConverter(Iter, Iter, Conv) | DraftICU 65 | 
-| localematcher.h |  Locale icu::LocaleMatcher::Result::makeResolvedLocale(UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  LocaleMatcher icu::LocaleMatcher::Builder::build(UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  LocaleMatcher&amp; icu::LocaleMatcher::operator=(LocaleMatcher&amp;&amp;) | DraftICU 65 | 
-| localematcher.h |  Result icu::LocaleMatcher::getBestMatchResult(Locale::Iterator&amp;, UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  Result icu::LocaleMatcher::getBestMatchResult(const Locale&amp;, UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  Result&amp; icu::LocaleMatcher::Result::operator=(Result&amp;&amp;) | DraftICU 65 | 
-| localematcher.h |  UBool icu::LocaleMatcher::Builder::copyErrorTo(UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  const Locale* icu::LocaleMatcher::Result::getDesiredLocale() const | DraftICU 65 | 
-| localematcher.h |  const Locale* icu::LocaleMatcher::Result::getSupportedLocale() const | DraftICU 65 | 
-| localematcher.h |  const Locale* icu::LocaleMatcher::getBestMatch(Locale::Iterator&amp;, UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  const Locale* icu::LocaleMatcher::getBestMatch(const Locale&amp;, UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  const Locale* icu::LocaleMatcher::getBestMatchForListString(StringPiece, UErrorCode&amp;) const | DraftICU 65 | 
-| localematcher.h |  <tt>enum</tt> ULocMatchDemotion::ULOCMATCH_DEMOTION_NONE | DraftICU 65 | 
-| localematcher.h |  <tt>enum</tt> ULocMatchDemotion::ULOCMATCH_DEMOTION_REGION | DraftICU 65 | 
-| localematcher.h |  <tt>enum</tt> ULocMatchFavorSubtag::ULOCMATCH_FAVOR_LANGUAGE | DraftICU 65 | 
-| localematcher.h |  <tt>enum</tt> ULocMatchFavorSubtag::ULOCMATCH_FAVOR_SCRIPT | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::Builder::Builder() | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::Builder::Builder(Builder&amp;&amp;) | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::Builder::~Builder() | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::LocaleMatcher(LocaleMatcher&amp;&amp;) | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::Result::Result(Result&amp;&amp;) | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::Result::~Result() | DraftICU 65 | 
-| localematcher.h |  icu::LocaleMatcher::~LocaleMatcher() | DraftICU 65 | 
-| localematcher.h |  int32_t icu::LocaleMatcher::Result::getDesiredIndex() const | DraftICU 65 | 
-| localematcher.h |  int32_t icu::LocaleMatcher::Result::getSupportedIndex() const | DraftICU 65 | 
-| localpointer.h |  LocalArray&lt;T&gt;&amp; icu::LocalArray&lt; T &gt;::operator=(std::unique_ptr&lt; T[]&gt;&amp;&amp;) | DraftICU 64 | 
-| localpointer.h |  LocalPointer&lt;T&gt;&amp; icu::LocalPointer&lt; T &gt;::operator=(std::unique_ptr&lt; T &gt;&amp;&amp;) | DraftICU 64 | 
-| localpointer.h |  icu::LocalArray&lt; T &gt;::LocalArray(std::unique_ptr&lt; T[]&gt;&amp;&amp;) | DraftICU 64 | 
-| localpointer.h |  icu::LocalArray&lt; T &gt;::operator std::unique_ptr&lt; T[]&gt;() &amp;&amp; | DraftICU 64 | 
-| localpointer.h |  icu::LocalPointer&lt; T &gt;::LocalPointer(std::unique_ptr&lt; T &gt;&amp;&amp;) | DraftICU 64 | 
-| localpointer.h |  icu::LocalPointer&lt; T &gt;::operator std::unique_ptr&lt; T &gt;() &amp;&amp; | DraftICU 64 | 
-| locid.h |  UBool icu::Locale::ConvertingIterator&lt; Iter, Conv &gt;::hasNext() const override | DraftICU 65 | 
-| locid.h |  UBool icu::Locale::Iterator::hasNext() const | DraftICU 65 | 
-| locid.h |  UBool icu::Locale::RangeIterator&lt; Iter &gt;::hasNext() const override | DraftICU 65 | 
-| locid.h |  const Locale&amp; icu::Locale::ConvertingIterator&lt; Iter, Conv &gt;::next() override | DraftICU 65 | 
-| locid.h |  const Locale&amp; icu::Locale::Iterator::next() | DraftICU 65 | 
-| locid.h |  const Locale&amp; icu::Locale::RangeIterator&lt; Iter &gt;::next() override | DraftICU 65 | 
-| locid.h |  icu::Locale::ConvertingIterator&lt; Iter, Conv &gt;::ConvertingIterator(Iter, Iter, Conv) | DraftICU 65 | 
-| locid.h |  icu::Locale::Iterator::~Iterator() | DraftICU 65 | 
-| locid.h |  icu::Locale::RangeIterator&lt; Iter &gt;::RangeIterator(Iter, Iter) | DraftICU 65 | 
+| basictz.h |  void icu::BasicTimeZone::getOffsetFromLocal(UDate, UTimeZoneLocalOption, UTimeZoneLocalOption, int32_t&amp;, int32_t&amp;, UErrorCode&amp;) const | DraftICU 69 | 
 | measfmt.h |  void icu::MeasureFormat::parseObject(const UnicodeString&amp;, Formattable&amp;, ParsePosition&amp;) const | DraftICU 53 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getAcre() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getAcreFoot() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getAmpere() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getArcMinute() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getArcSecond() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getAstronomicalUnit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getAtmosphere() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getBar() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getBarrel() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getBit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getBritishThermalUnit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getBushel() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getByte() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCalorie() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCarat() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCelsius() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCentiliter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCentimeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCentury() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicCentimeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicFoot() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicInch() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicKilometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicMeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicMile() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCubicYard() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCup() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getCupMetric() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDalton() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDay() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDayPerson() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDecade() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDeciliter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDecimeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDegree() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDotPerCentimeter() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDotPerInch() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getDunam() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getEarthMass() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getElectronvolt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getEm() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFahrenheit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFathom() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFluidOunce() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFluidOunceImperial() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFoodcalorie() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFoot() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getFurlong() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGForce() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGallon() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGallonImperial() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGenericTemperature() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGigabit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGigabyte() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGigahertz() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGigawatt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getGram() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getHectare() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getHectoliter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getHectopascal() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getHertz() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getHorsepower() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getHour() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getInch() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getInchHg() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getJoule() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKarat() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKelvin() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilobit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilobyte() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilocalorie() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilogram() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilohertz() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilojoule() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilometerPerHour() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilopascal() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilowatt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKilowattHour() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getKnot() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getLightYear() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getLiter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getLiterPer100Kilometers() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getLiterPerKilometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getLux() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegabit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegabyte() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegahertz() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegaliter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegapascal() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegapixel() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMegawatt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMeterPerSecond() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMeterPerSecondSquared() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMetricTon() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMicrogram() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMicrometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMicrosecond() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMile() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilePerGallon() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilePerGallonImperial() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilePerHour() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMileScandinavian() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilliampere() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMillibar() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilligram() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilligramPerDeciliter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilliliter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMillimeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMillimeterOfMercury() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMillimolePerLiter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMillisecond() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilliwatt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMinute() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMole() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMonth() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMonthPerson() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getNanometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getNanosecond() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getNauticalMile() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getNewton() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getNewtonMeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getOhm() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getOunce() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getOunceTroy() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getParsec() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPartPerMillion() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPascal() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPercent() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPermille() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPermyriad() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPetabyte() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPicometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPint() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPintMetric() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPixel() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPixelPerCentimeter() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPixelPerInch() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPoint() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPound() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPoundFoot() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPoundForce() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getPoundPerSquareInch() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getQuart() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getRadian() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getRevolutionAngle() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSecond() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSolarLuminosity() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSolarMass() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSolarRadius() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareCentimeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareFoot() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareInch() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareKilometer() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareMeter() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareMile() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getSquareYard() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getStone() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getTablespoon() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getTeaspoon() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getTerabit() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getTerabyte() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getThermUs() | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getTon() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getVolt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getWatt() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getWeek() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getWeekPerson() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getYard() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getYear() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getYearPerson() | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createBar(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createBarrel(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createBritishThermalUnit(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDalton(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDayPerson(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDecade(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDotPerCentimeter(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDotPerInch(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createDunam(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createEarthMass(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createElectronvolt(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createEm(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createFluidOunceImperial(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createKilopascal(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createMegapascal(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createMegapixel(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createMole(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createMonthPerson(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createNewton(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createNewtonMeter(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPascal(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPermyriad(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPixel(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPixelPerCentimeter(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPixelPerInch(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPoundFoot(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createPoundForce(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createSolarLuminosity(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createSolarMass(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createSolarRadius(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createThermUs(UErrorCode&amp;) | DraftICU 65 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createWeekPerson(UErrorCode&amp;) | DraftICU 64 | 
-| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createYearPerson(UErrorCode&amp;) | DraftICU 64 | 
-| nounit.h |  UClassID icu::NoUnit::getDynamicClassID() const | DraftICU 60 | 
-| nounit.h |  icu::NoUnit::NoUnit(const NoUnit&amp;) | DraftICU 60 | 
-| nounit.h |  icu::NoUnit::~NoUnit() | DraftICU 60 | 
-| nounit.h |  <tt>static</tt> NoUnit icu::NoUnit::base() | DraftICU 60 | 
-| nounit.h |  <tt>static</tt> NoUnit icu::NoUnit::percent() | DraftICU 60 | 
-| nounit.h |  <tt>static</tt> NoUnit icu::NoUnit::permille() | DraftICU 60 | 
-| nounit.h |  <tt>static</tt> UClassID icu::NoUnit::getStaticClassID() | DraftICU 60 | 
-| nounit.h |  void* icu::NoUnit::clone() const | DraftICU 60 | 
-| numberformatter.h |  LocalPointer&lt;Derived&gt; icu::number::NumberFormatterSettings&lt; Derived &gt;::clone() &amp;&amp; | DraftICU 64 | 
-| numberformatter.h |  LocalPointer&lt;Derived&gt; icu::number::NumberFormatterSettings&lt; Derived &gt;::clone() const &amp; | DraftICU 64 | 
-| numberformatter.h |  StringClass icu::number::FormattedNumber::toDecimalNumber(UErrorCode&amp;) const | DraftICU 65 | 
-| numberformatter.h |  UBool icu::number::FormattedNumber::nextFieldPosition(FieldPosition&amp;, UErrorCode&amp;) const | DraftICU 62 | 
-| numberformatter.h |  UBool icu::number::FormattedNumber::nextPosition(ConstrainedFieldPosition&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| numberformatter.h |  UnicodeString icu::number::FormattedNumber::toTempString(UErrorCode&amp;) const | DraftICU 64 | 
-| numberformatter.h |  icu::number::FormattedNumber::FormattedNumber() | DraftICU 64 | 
-| numberformatter.h |  <tt>static</tt> UnlocalizedNumberFormatter icu::number::NumberFormatter::forSkeleton(const UnicodeString&amp;, UParseError&amp;, UErrorCode&amp;) | DraftICU 64 | 
-| numberformatter.h |  void icu::number::FormattedNumber::getAllFieldPositions(FieldPositionIterator&amp;, UErrorCode&amp;) const | DraftICU 62 | 
-| numberrangeformatter.h |  LocalPointer&lt;Derived&gt; icu::number::NumberRangeFormatterSettings&lt; Derived &gt;::clone() &amp;&amp; | DraftICU 64 | 
-| numberrangeformatter.h |  LocalPointer&lt;Derived&gt; icu::number::NumberRangeFormatterSettings&lt; Derived &gt;::clone() const &amp; | DraftICU 64 | 
-| numberrangeformatter.h |  UBool icu::number::FormattedNumberRange::nextFieldPosition(FieldPosition&amp;, UErrorCode&amp;) const | DraftICU 63 | 
-| numberrangeformatter.h |  UBool icu::number::FormattedNumberRange::nextPosition(ConstrainedFieldPosition&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| numberrangeformatter.h |  UnicodeString icu::number::FormattedNumberRange::getFirstDecimal(UErrorCode&amp;) const | DraftICU 63 | 
-| numberrangeformatter.h |  UnicodeString icu::number::FormattedNumberRange::getSecondDecimal(UErrorCode&amp;) const | DraftICU 63 | 
-| numberrangeformatter.h |  UnicodeString icu::number::FormattedNumberRange::toTempString(UErrorCode&amp;) const | DraftICU 64 | 
-| numberrangeformatter.h |  void icu::number::FormattedNumberRange::getAllFieldPositions(FieldPositionIterator&amp;, UErrorCode&amp;) const | DraftICU 63 | 
-| numfmt.h |  <tt>enum</tt>  							icu::NumberFormat::EAlignmentFields::kCompactField | DraftICU 64 | 
-| numfmt.h |  <tt>enum</tt>  							icu::NumberFormat::EAlignmentFields::kMeasureUnitField | DraftICU 64 | 
-| plurrule.h |  UnicodeString icu::PluralRules::select(const number::FormattedNumber&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  Appendable&amp; icu::FormattedRelativeDateTime::appendTo(Appendable&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  FormattedRelativeDateTime icu::RelativeDateTimeFormatter::formatNumericToValue(double, URelativeDateTimeUnit, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  FormattedRelativeDateTime icu::RelativeDateTimeFormatter::formatToValue(UDateDirection, UDateAbsoluteUnit, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  FormattedRelativeDateTime icu::RelativeDateTimeFormatter::formatToValue(double, UDateDirection, UDateRelativeUnit, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  FormattedRelativeDateTime icu::RelativeDateTimeFormatter::formatToValue(double, URelativeDateTimeUnit, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  FormattedRelativeDateTime&amp; icu::FormattedRelativeDateTime::operator=(FormattedRelativeDateTime&amp;&amp;) | DraftICU 64 | 
-| reldatefmt.h |  UBool icu::FormattedRelativeDateTime::nextPosition(ConstrainedFieldPosition&amp;, UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  UnicodeString icu::FormattedRelativeDateTime::toString(UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  UnicodeString icu::FormattedRelativeDateTime::toTempString(UErrorCode&amp;) const | DraftICU 64 | 
-| reldatefmt.h |  <tt>enum</tt> UDateAbsoluteUnit::UDAT_ABSOLUTE_HOUR | DraftICU 65 | 
-| reldatefmt.h |  <tt>enum</tt> UDateAbsoluteUnit::UDAT_ABSOLUTE_MINUTE | DraftICU 65 | 
-| reldatefmt.h |  icu::FormattedRelativeDateTime::FormattedRelativeDateTime() | DraftICU 64 | 
-| reldatefmt.h |  icu::FormattedRelativeDateTime::FormattedRelativeDateTime(FormattedRelativeDateTime&amp;&amp;) | DraftICU 64 | 
-| reldatefmt.h |  icu::FormattedRelativeDateTime::~FormattedRelativeDateTime() | DraftICU 64 | 
-| stringpiece.h |  icu::StringPiece::StringPiece(T) | DraftICU 65 | 
-| ucal.h |  int32_t ucal_getHostTimeZone(UChar*, int32_t, UErrorCode*) | DraftICU 65 | 
-| ucharstrie.h |  UCharsTrie&amp; icu::UCharsTrie::resetToState64(uint64_t) | DraftICU 65 | 
-| ucharstrie.h |  uint64_t icu::UCharsTrie::getState64() const | DraftICU 65 | 
-| udateintervalformat.h |  UFormattedDateInterval* udtitvfmt_openResult(UErrorCode*) | DraftICU 64 | 
-| udateintervalformat.h |  const UFormattedValue* udtitvfmt_resultAsValue(const UFormattedDateInterval*, UErrorCode*) | DraftICU 64 | 
-| udateintervalformat.h |  void udtitvfmt_closeResult(UFormattedDateInterval*) | DraftICU 64 | 
-| udateintervalformat.h |  void udtitvfmt_formatToResult(const UDateIntervalFormat*, UFormattedDateInterval*, UDate, UDate, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  UBool ucfpos_matchesField(const UConstrainedFieldPosition*, int32_t, int32_t, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  UBool ufmtval_nextPosition(const UFormattedValue*, UConstrainedFieldPosition*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  UConstrainedFieldPosition* ucfpos_open(UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  const UChar* ufmtval_getString(const UFormattedValue*, int32_t*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_DATE_INTERVAL_SPAN | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_DATE | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_LIST_SPAN | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_LIST | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_NUMBER | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_RELATIVE_DATETIME | DraftICU 64 | 
-| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_UNDEFINED | DraftICU 64 | 
-| uformattedvalue.h |  int32_t ucfpos_getCategory(const UConstrainedFieldPosition*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  int32_t ucfpos_getField(const UConstrainedFieldPosition*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  int64_t ucfpos_getInt64IterationContext(const UConstrainedFieldPosition*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_close(UConstrainedFieldPosition*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_constrainCategory(UConstrainedFieldPosition*, int32_t, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_constrainField(UConstrainedFieldPosition*, int32_t, int32_t, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_getIndexes(const UConstrainedFieldPosition*, int32_t*, int32_t*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_reset(UConstrainedFieldPosition*, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_setInt64IterationContext(UConstrainedFieldPosition*, int64_t, UErrorCode*) | DraftICU 64 | 
-| uformattedvalue.h |  void ucfpos_setState(UConstrainedFieldPosition*, int32_t, int32_t, int32_t, int32_t, UErrorCode*) | DraftICU 64 | 
-| ulistformatter.h |  UFormattedList* ulistfmt_openResult(UErrorCode*) | DraftICU 64 | 
-| ulistformatter.h |  const UFormattedValue* ulistfmt_resultAsValue(const UFormattedList*, UErrorCode*) | DraftICU 64 | 
-| ulistformatter.h |  <tt>enum</tt> UListFormatterField::ULISTFMT_ELEMENT_FIELD | DraftICU 63 | 
-| ulistformatter.h |  <tt>enum</tt> UListFormatterField::ULISTFMT_LITERAL_FIELD | DraftICU 63 | 
-| ulistformatter.h |  void ulistfmt_closeResult(UFormattedList*) | DraftICU 64 | 
-| ulistformatter.h |  void ulistfmt_formatStringsToResult(const UListFormatter*, const UChar* const strings[], const int32_t*, int32_t, UFormattedList*, UErrorCode*) | DraftICU 64 | 
-| uloc.h |  UEnumeration* uloc_openAvailableByType(ULocAvailableType, UErrorCode*) | DraftICU 65 | 
-| uloc.h |  <tt>enum</tt> ULocAvailableType::ULOC_AVAILABLE_DEFAULT | DraftICU 65 | 
-| uloc.h |  <tt>enum</tt> ULocAvailableType::ULOC_AVAILABLE_ONLY_LEGACY_ALIASES | DraftICU 65 | 
-| uloc.h |  <tt>enum</tt> ULocAvailableType::ULOC_AVAILABLE_WITH_LEGACY_ALIASES | DraftICU 65 | 
-| unum.h |  <tt>enum</tt> UNumberFormatAttribute::UNUM_MINIMUM_GROUPING_DIGITS | DraftICU 64 | 
-| unum.h |  <tt>enum</tt> UNumberFormatAttribute::UNUM_PARSE_CASE_SENSITIVE | DraftICU 64 | 
-| unum.h |  <tt>enum</tt> UNumberFormatAttribute::UNUM_SIGN_ALWAYS_SHOWN | DraftICU 64 | 
-| unum.h |  <tt>enum</tt> UNumberFormatFields::UNUM_COMPACT_FIELD | DraftICU 64 | 
-| unum.h |  <tt>enum</tt> UNumberFormatFields::UNUM_MEASURE_UNIT_FIELD | DraftICU 64 | 
-| unumberformatter.h |  UNumberFormatter* unumf_openForSkeletonAndLocaleWithError(const UChar*, int32_t, const char*, UParseError*, UErrorCode*) | DraftICU 64 | 
-| unumberformatter.h |  const UFormattedValue* unumf_resultAsValue(const UFormattedNumber*, UErrorCode*) | DraftICU 64 | 
-| upluralrules.h |  int32_t uplrules_selectFormatted(const UPluralRules*, const struct UFormattedNumber*, UChar*, int32_t, UErrorCode*) | DraftICU 64 | 
+| measunit.h |  MeasureUnit icu::MeasureUnit::withPrefix(UMeasurePrefix, UErrorCode&amp;) const | DraftICU 69 | 
+| measunit.h |  UMeasurePrefix icu::MeasureUnit::getPrefix(UErrorCode&amp;) const | DraftICU 69 | 
+| measunit.h |  <tt>static</tt> MeasureUnit icu::MeasureUnit::getMilligramOfglucosePerDeciliter() | DraftICU 69 | 
+| measunit.h |  <tt>static</tt> MeasureUnit* icu::MeasureUnit::createMilligramOfglucosePerDeciliter(UErrorCode&amp;) | DraftICU 69 | 
+| numberformatter.h |  Precision icu::number::FractionPrecision::withSignificantDigits(int32_t, int32_t, UNumberRoundingPriority) const | DraftICU 69 | 
+| numberformatter.h |  Precision icu::number::Precision::trailingZeroDisplay(UNumberTrailingZeroDisplay) const | DraftICU 69 | 
+| rbtz.h |  void icu::RuleBasedTimeZone::getOffsetFromLocal(UDate, UTimeZoneLocalOption, UTimeZoneLocalOption, int32_t&amp;, int32_t&amp;, UErrorCode&amp;) const | DraftICU 69 | 
+| simpletz.h |  void icu::SimpleTimeZone::getOffsetFromLocal(UDate, UTimeZoneLocalOption, UTimeZoneLocalOption, int32_t&amp;, int32_t&amp;, UErrorCode&amp;) const | DraftICU 69 | 
+| ubrk.h |  UBreakIterator* ubrk_clone(const UBreakIterator*, UErrorCode*) | DraftICU 69 | 
+| ucal.h |  <tt>enum</tt> UTimeZoneLocalOption::UCAL_TZ_LOCAL_DAYLIGHT_FORMER | DraftICU 69 | 
+| ucal.h |  <tt>enum</tt> UTimeZoneLocalOption::UCAL_TZ_LOCAL_DAYLIGHT_LATTER | DraftICU 69 | 
+| ucal.h |  <tt>enum</tt> UTimeZoneLocalOption::UCAL_TZ_LOCAL_FORMER | DraftICU 69 | 
+| ucal.h |  <tt>enum</tt> UTimeZoneLocalOption::UCAL_TZ_LOCAL_LATTER | DraftICU 69 | 
+| ucal.h |  <tt>enum</tt> UTimeZoneLocalOption::UCAL_TZ_LOCAL_STANDARD_FORMER | DraftICU 69 | 
+| ucal.h |  <tt>enum</tt> UTimeZoneLocalOption::UCAL_TZ_LOCAL_STANDARD_LATTER | DraftICU 69 | 
+| ucal.h |  void ucal_getTimeZoneOffsetFromLocal(const UCalendar*, UTimeZoneLocalOption, UTimeZoneLocalOption, int32_t*, int32_t*, UErrorCode*) | DraftICU 69 | 
+| uformattedvalue.h |  <tt>enum</tt> UFieldCategory::UFIELD_CATEGORY_NUMBER_RANGE_SPAN | DraftICU 69 | 
+| uniset.h |  UnicodeSet&amp; icu::UnicodeSet::retain(const UnicodeString&amp;) | DraftICU 69 | 
+| unum.h |  <tt>enum</tt> UNumberFormatRoundingMode::UNUM_ROUND_HALF_CEILING | DraftICU 69 | 
+| unum.h |  <tt>enum</tt> UNumberFormatRoundingMode::UNUM_ROUND_HALF_FLOOR | DraftICU 69 | 
+| unum.h |  <tt>enum</tt> UNumberFormatRoundingMode::UNUM_ROUND_HALF_ODD | DraftICU 69 | 
+| unumberformatter.h |  <tt>enum</tt> UNumberRoundingPriority::UNUM_ROUNDING_PRIORITY_RELAXED | DraftICU 69 | 
+| unumberformatter.h |  <tt>enum</tt> UNumberRoundingPriority::UNUM_ROUNDING_PRIORITY_STRICT | DraftICU 69 | 
+| unumberformatter.h |  <tt>enum</tt> UNumberSignDisplay::UNUM_SIGN_ACCOUNTING_NEGATIVE | DraftICU 69 | 
+| unumberformatter.h |  <tt>enum</tt> UNumberSignDisplay::UNUM_SIGN_NEGATIVE | DraftICU 69 | 
+| unumberformatter.h |  <tt>enum</tt> UNumberTrailingZeroDisplay::UNUM_TRAILING_ZERO_AUTO | DraftICU 69 | 
+| unumberformatter.h |  <tt>enum</tt> UNumberTrailingZeroDisplay::UNUM_TRAILING_ZERO_HIDE_IF_WHOLE | DraftICU 69 | 
 | uregex.h |  <tt>enum</tt> URegexpFlag::UREGEX_CANON_EQ | DraftICU 2.4 | 
-| ureldatefmt.h |  UFormattedRelativeDateTime* ureldatefmt_openResult(UErrorCode*) | DraftICU 64 | 
-| ureldatefmt.h |  const UFormattedValue* ureldatefmt_resultAsValue(const UFormattedRelativeDateTime*, UErrorCode*) | DraftICU 64 | 
-| ureldatefmt.h |  <tt>enum</tt> URelativeDateTimeFormatterField::UDAT_REL_LITERAL_FIELD | DraftICU 64 | 
-| ureldatefmt.h |  <tt>enum</tt> URelativeDateTimeFormatterField::UDAT_REL_NUMERIC_FIELD | DraftICU 64 | 
-| ureldatefmt.h |  void ureldatefmt_closeResult(UFormattedRelativeDateTime*) | DraftICU 64 | 
-| ureldatefmt.h |  void ureldatefmt_formatNumericToResult(const URelativeDateTimeFormatter*, double, URelativeDateTimeUnit, UFormattedRelativeDateTime*, UErrorCode*) | DraftICU 64 | 
-| ureldatefmt.h |  void ureldatefmt_formatToResult(const URelativeDateTimeFormatter*, double, URelativeDateTimeUnit, UFormattedRelativeDateTime*, UErrorCode*) | DraftICU 64 | 
-| utrace.h |  <tt>enum</tt> UTraceFunctionNumber::UTRACE_UDATA_BUNDLE | DraftICU 65 | 
-| utrace.h |  <tt>enum</tt> UTraceFunctionNumber::UTRACE_UDATA_DATA_FILE | DraftICU 65 | 
-| utrace.h |  <tt>enum</tt> UTraceFunctionNumber::UTRACE_UDATA_RESOURCE | DraftICU 65 | 
-| utrace.h |  <tt>enum</tt> UTraceFunctionNumber::UTRACE_UDATA_RES_FILE | DraftICU 65 | 
-| utrace.h |  <tt>enum</tt> UTraceFunctionNumber::UTRACE_UDATA_START | DraftICU 65 | 
+| uset.h |  void uset_complementAllCodePoints(USet*, const UChar*, int32_t) | DraftICU 69 | 
+| uset.h |  void uset_complementRange(USet*, UChar32, UChar32) | DraftICU 69 | 
+| uset.h |  void uset_complementString(USet*, const UChar*, int32_t) | DraftICU 69 | 
+| uset.h |  void uset_removeAllCodePoints(USet*, const UChar*, int32_t) | DraftICU 69 | 
+| uset.h |  void uset_retainAllCodePoints(USet*, const UChar*, int32_t) | DraftICU 69 | 
+| uset.h |  void uset_retainString(USet*, const UChar*, int32_t) | DraftICU 69 | 
+| vtzone.h |  void icu::VTimeZone::getOffsetFromLocal(UDate, UTimeZoneLocalOption, UTimeZoneLocalOption, int32_t&amp;, int32_t&amp;, UErrorCode&amp;) const | DraftICU 69 | 
 
 ## Simplifications
 
 This section shows cases where the signature was "simplified" for the sake of comparison. The simplified form is in bold, followed by
     all possible variations in "original" form.
 
+- **`UClassID icu::BreakIterator::getDynamicClassID() const`**
+  - `UClassID icu::BreakIterator::getDynamicClassID() const override=0`
+  - `UClassID icu::BreakIterator::getDynamicClassID() const=0`
+- **`UClassID icu::Calendar::getDynamicClassID() const`**
+  - `UClassID icu::Calendar::getDynamicClassID() const override=0`
+  - `UClassID icu::Calendar::getDynamicClassID() const=0`
+- **`UClassID icu::Collator::getDynamicClassID() const`**
+  - `UClassID icu::Collator::getDynamicClassID() const override=0`
+  - `UClassID icu::Collator::getDynamicClassID() const=0`
+- **`UClassID icu::ForwardCharacterIterator::getDynamicClassID() const`**
+  - `UClassID icu::ForwardCharacterIterator::getDynamicClassID() const override=0`
+  - `UClassID icu::ForwardCharacterIterator::getDynamicClassID() const=0`
+- **`UClassID icu::NumberFormat::getDynamicClassID() const`**
+  - `UClassID icu::NumberFormat::getDynamicClassID() const override=0`
+  - `UClassID icu::NumberFormat::getDynamicClassID() const=0`
+- **`UClassID icu::TimeZone::getDynamicClassID() const`**
+  - `UClassID icu::TimeZone::getDynamicClassID() const override=0`
+  - `UClassID icu::TimeZone::getDynamicClassID() const=0`
+- **`UClassID icu::Transliterator::getDynamicClassID() const`**
+  - `UClassID icu::Transliterator::getDynamicClassID() const override=0`
+  - `UClassID icu::Transliterator::getDynamicClassID() const=0`
+- **`UClassID icu::UnicodeFunctor::getDynamicClassID() const`**
+  - `UClassID icu::UnicodeFunctor::getDynamicClassID() const override=0`
+  - `UClassID icu::UnicodeFunctor::getDynamicClassID() const=0`
+- **`UMatchDegree icu::UnicodeFilter::matches(const Replaceable&, int32_t&, int32_t, bool)`**
+  - `UMatchDegree icu::UnicodeFilter::matches(const Replaceable&, int32_t&, int32_t, UBool)`
+  - `UMatchDegree icu::UnicodeFilter::matches(const Replaceable&, int32_t&, int32_t, UBool) override`
+- **`UMatchDegree icu::UnicodeSet::matches(const Replaceable&, int32_t&, int32_t, bool)`**
+  - `UMatchDegree icu::UnicodeSet::matches(const Replaceable&, int32_t&, int32_t, UBool)`
+  - `UMatchDegree icu::UnicodeSet::matches(const Replaceable&, int32_t&, int32_t, UBool) override`
+- **`UnicodeString& icu::UnicodeSet::toPattern(UnicodeString&, bool escapeUnprintable=) const`**
+  - `UnicodeString& icu::UnicodeSet::toPattern(UnicodeString&, UBool escapeUnprintable=) const`
+  - `UnicodeString& icu::UnicodeSet::toPattern(UnicodeString&, UBool escapeUnprintable=) const override`
+- **`bool icu::AnnualTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const`**
+  - `UBool icu::AnnualTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const`
+  - `UBool icu::AnnualTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const override`
+- **`bool icu::AnnualTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const`**
+  - `UBool icu::AnnualTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const`
+  - `UBool icu::AnnualTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const override`
+- **`bool icu::AnnualTimeZoneRule::getNextStart(UDate, int32_t, int32_t, bool, UDate&) const`**
+  - `UBool icu::AnnualTimeZoneRule::getNextStart(UDate, int32_t, int32_t, UBool, UDate&) const`
+  - `UBool icu::AnnualTimeZoneRule::getNextStart(UDate, int32_t, int32_t, UBool, UDate&) const override`
+- **`bool icu::AnnualTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, bool, UDate&) const`**
+  - `UBool icu::AnnualTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, UBool, UDate&) const`
+  - `UBool icu::AnnualTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, UBool, UDate&) const override`
+- **`bool icu::AnnualTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const`**
+  - `UBool icu::AnnualTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const`
+  - `UBool icu::AnnualTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const override`
+- **`bool icu::AnnualTimeZoneRule::operator!=(const TimeZoneRule&) const`**
+  - `UBool icu::AnnualTimeZoneRule::operator!=(const TimeZoneRule&) const`
+  - `bool icu::AnnualTimeZoneRule::operator!=(const TimeZoneRule&) const override`
+- **`bool icu::AnnualTimeZoneRule::operator==(const TimeZoneRule&) const`**
+  - `UBool icu::AnnualTimeZoneRule::operator==(const TimeZoneRule&) const`
+  - `bool icu::AnnualTimeZoneRule::operator==(const TimeZoneRule&) const override`
+- **`bool icu::BreakIterator::operator==(const BreakIterator&) const`**
+  - `UBool icu::BreakIterator::operator==(const BreakIterator&) const=0`
+  - `bool icu::BreakIterator::operator==(const BreakIterator&) const=0`
+- **`bool icu::ChoiceFormat::operator==(const Format&) const`**
+  - `UBool icu::ChoiceFormat::operator==(const Format&) const`
+  - `bool icu::ChoiceFormat::operator==(const Format&) const override`
+- **`bool icu::DateFormat::operator==(const Format&) const`**
+  - `UBool icu::DateFormat::operator==(const Format&) const`
+  - `bool icu::DateFormat::operator==(const Format&) const override`
+- **`bool icu::DateIntervalFormat::operator==(const Format&) const`**
+  - `UBool icu::DateIntervalFormat::operator==(const Format&) const`
+  - `bool icu::DateIntervalFormat::operator==(const Format&) const override`
+- **`bool icu::DecimalFormat::operator==(const Format&) const`**
+  - `UBool icu::DecimalFormat::operator==(const Format&) const U_OVERRIDE`
+  - `bool icu::DecimalFormat::operator==(const Format&) const U_OVERRIDE`
+- **`bool icu::Format::operator==(const Format&) const`**
+  - `UBool icu::Format::operator==(const Format&) const=0`
+  - `bool icu::Format::operator==(const Format&) const=0`
+- **`bool icu::ForwardCharacterIterator::operator==(const ForwardCharacterIterator&) const`**
+  - `UBool icu::ForwardCharacterIterator::operator==(const ForwardCharacterIterator&) const=0`
+  - `bool icu::ForwardCharacterIterator::operator==(const ForwardCharacterIterator&) const=0`
+- **`bool icu::GregorianCalendar::haveDefaultCentury() const`**
+  - `UBool icu::GregorianCalendar::haveDefaultCentury() const`
+  - `UBool icu::GregorianCalendar::haveDefaultCentury() const override`
+- **`bool icu::GregorianCalendar::inDaylightTime(UErrorCode&) const`**
+  - `UBool icu::GregorianCalendar::inDaylightTime(UErrorCode&) const`
+  - `UBool icu::GregorianCalendar::inDaylightTime(UErrorCode&) const override`
+- **`bool icu::GregorianCalendar::isEquivalentTo(const Calendar&) const`**
+  - `UBool icu::GregorianCalendar::isEquivalentTo(const Calendar&) const`
+  - `UBool icu::GregorianCalendar::isEquivalentTo(const Calendar&) const override`
+- **`bool icu::InitialTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const`**
+  - `UBool icu::InitialTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const`
+  - `UBool icu::InitialTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const override`
+- **`bool icu::InitialTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const`**
+  - `UBool icu::InitialTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const`
+  - `UBool icu::InitialTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const override`
+- **`bool icu::InitialTimeZoneRule::getNextStart(UDate, int32_t, int32_t, bool, UDate&) const`**
+  - `UBool icu::InitialTimeZoneRule::getNextStart(UDate, int32_t, int32_t, UBool, UDate&) const`
+  - `UBool icu::InitialTimeZoneRule::getNextStart(UDate, int32_t, int32_t, UBool, UDate&) const override`
+- **`bool icu::InitialTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, bool, UDate&) const`**
+  - `UBool icu::InitialTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, UBool, UDate&) const`
+  - `UBool icu::InitialTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, UBool, UDate&) const override`
+- **`bool icu::InitialTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const`**
+  - `UBool icu::InitialTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const`
+  - `UBool icu::InitialTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const override`
+- **`bool icu::InitialTimeZoneRule::operator!=(const TimeZoneRule&) const`**
+  - `UBool icu::InitialTimeZoneRule::operator!=(const TimeZoneRule&) const`
+  - `bool icu::InitialTimeZoneRule::operator!=(const TimeZoneRule&) const override`
+- **`bool icu::InitialTimeZoneRule::operator==(const TimeZoneRule&) const`**
+  - `UBool icu::InitialTimeZoneRule::operator==(const TimeZoneRule&) const`
+  - `bool icu::InitialTimeZoneRule::operator==(const TimeZoneRule&) const override`
+- **`bool icu::MeasureFormat::operator==(const Format&) const`**
+  - `UBool icu::MeasureFormat::operator==(const Format&) const`
+  - `bool icu::MeasureFormat::operator==(const Format&) const override`
+- **`bool icu::MessageFormat::operator==(const Format&) const`**
+  - `UBool icu::MessageFormat::operator==(const Format&) const`
+  - `bool icu::MessageFormat::operator==(const Format&) const override`
+- **`bool icu::NumberFormat::operator==(const Format&) const`**
+  - `UBool icu::NumberFormat::operator==(const Format&) const`
+  - `bool icu::NumberFormat::operator==(const Format&) const override`
+- **`bool icu::PluralFormat::operator==(const Format&) const`**
+  - `UBool icu::PluralFormat::operator==(const Format&) const`
+  - `bool icu::PluralFormat::operator==(const Format&) const override`
+- **`bool icu::RuleBasedBreakIterator::isBoundary(int32_t)`**
+  - `UBool icu::RuleBasedBreakIterator::isBoundary(int32_t)`
+  - `UBool icu::RuleBasedBreakIterator::isBoundary(int32_t) override`
+- **`bool icu::RuleBasedBreakIterator::operator==(const BreakIterator&) const`**
+  - `UBool icu::RuleBasedBreakIterator::operator==(const BreakIterator&) const`
+  - `bool icu::RuleBasedBreakIterator::operator==(const BreakIterator&) const override`
+- **`bool icu::RuleBasedCollator::operator==(const Collator&) const`**
+  - `UBool icu::RuleBasedCollator::operator==(const Collator&) const`
+  - `bool icu::RuleBasedCollator::operator==(const Collator&) const override`
+- **`bool icu::RuleBasedNumberFormat::isLenient() const`**
+  - `UBool icu::RuleBasedNumberFormat::isLenient() const`
+  - `UBool icu::RuleBasedNumberFormat::isLenient() const override`
+- **`bool icu::RuleBasedNumberFormat::operator==(const Format&) const`**
+  - `UBool icu::RuleBasedNumberFormat::operator==(const Format&) const`
+  - `bool icu::RuleBasedNumberFormat::operator==(const Format&) const override`
+- **`bool icu::RuleBasedTimeZone::getNextTransition(UDate, bool, TimeZoneTransition&) const`**
+  - `UBool icu::RuleBasedTimeZone::getNextTransition(UDate, UBool, TimeZoneTransition&) const`
+  - `UBool icu::RuleBasedTimeZone::getNextTransition(UDate, UBool, TimeZoneTransition&) const override`
+- **`bool icu::RuleBasedTimeZone::getPreviousTransition(UDate, bool, TimeZoneTransition&) const`**
+  - `UBool icu::RuleBasedTimeZone::getPreviousTransition(UDate, UBool, TimeZoneTransition&) const`
+  - `UBool icu::RuleBasedTimeZone::getPreviousTransition(UDate, UBool, TimeZoneTransition&) const override`
+- **`bool icu::RuleBasedTimeZone::hasSameRules(const TimeZone&) const`**
+  - `UBool icu::RuleBasedTimeZone::hasSameRules(const TimeZone&) const`
+  - `UBool icu::RuleBasedTimeZone::hasSameRules(const TimeZone&) const override`
+- **`bool icu::RuleBasedTimeZone::inDaylightTime(UDate, UErrorCode&) const`**
+  - `UBool icu::RuleBasedTimeZone::inDaylightTime(UDate, UErrorCode&) const`
+  - `UBool icu::RuleBasedTimeZone::inDaylightTime(UDate, UErrorCode&) const override`
+- **`bool icu::RuleBasedTimeZone::operator==(const TimeZone&) const`**
+  - `UBool icu::RuleBasedTimeZone::operator==(const TimeZone&) const`
+  - `bool icu::RuleBasedTimeZone::operator==(const TimeZone&) const override`
+- **`bool icu::RuleBasedTimeZone::useDaylightTime() const`**
+  - `UBool icu::RuleBasedTimeZone::useDaylightTime() const`
+  - `UBool icu::RuleBasedTimeZone::useDaylightTime() const override`
+- **`bool icu::SelectFormat::operator==(const Format&) const`**
+  - `UBool icu::SelectFormat::operator==(const Format&) const`
+  - `bool icu::SelectFormat::operator==(const Format&) const override`
+- **`bool icu::SimpleDateFormat::operator==(const Format&) const`**
+  - `UBool icu::SimpleDateFormat::operator==(const Format&) const`
+  - `bool icu::SimpleDateFormat::operator==(const Format&) const override`
+- **`bool icu::SimpleNumberFormatFactory::visible() const`**
+  - `UBool icu::SimpleNumberFormatFactory::visible() const`
+  - `UBool icu::SimpleNumberFormatFactory::visible() const override`
+- **`bool icu::SimpleTimeZone::getNextTransition(UDate, bool, TimeZoneTransition&) const`**
+  - `UBool icu::SimpleTimeZone::getNextTransition(UDate, UBool, TimeZoneTransition&) const`
+  - `UBool icu::SimpleTimeZone::getNextTransition(UDate, UBool, TimeZoneTransition&) const override`
+- **`bool icu::SimpleTimeZone::getPreviousTransition(UDate, bool, TimeZoneTransition&) const`**
+  - `UBool icu::SimpleTimeZone::getPreviousTransition(UDate, UBool, TimeZoneTransition&) const`
+  - `UBool icu::SimpleTimeZone::getPreviousTransition(UDate, UBool, TimeZoneTransition&) const override`
+- **`bool icu::SimpleTimeZone::hasSameRules(const TimeZone&) const`**
+  - `UBool icu::SimpleTimeZone::hasSameRules(const TimeZone&) const`
+  - `UBool icu::SimpleTimeZone::hasSameRules(const TimeZone&) const override`
+- **`bool icu::SimpleTimeZone::inDaylightTime(UDate, UErrorCode&) const`**
+  - `UBool icu::SimpleTimeZone::inDaylightTime(UDate, UErrorCode&) const`
+  - `UBool icu::SimpleTimeZone::inDaylightTime(UDate, UErrorCode&) const override`
+- **`bool icu::SimpleTimeZone::operator==(const TimeZone&) const`**
+  - `UBool icu::SimpleTimeZone::operator==(const TimeZone&) const`
+  - `bool icu::SimpleTimeZone::operator==(const TimeZone&) const override`
+- **`bool icu::SimpleTimeZone::useDaylightTime() const`**
+  - `UBool icu::SimpleTimeZone::useDaylightTime() const`
+  - `UBool icu::SimpleTimeZone::useDaylightTime() const override`
+- **`bool icu::StringCharacterIterator::operator==(const ForwardCharacterIterator&) const`**
+  - `UBool icu::StringCharacterIterator::operator==(const ForwardCharacterIterator&) const`
+  - `bool icu::StringCharacterIterator::operator==(const ForwardCharacterIterator&) const override`
+- **`bool icu::StringSearch::operator==(const SearchIterator&) const`**
+  - `UBool icu::StringSearch::operator==(const SearchIterator&) const`
+  - `bool icu::StringSearch::operator==(const SearchIterator&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const`
+  - `UBool icu::TimeArrayTimeZoneRule::getFinalStart(int32_t, int32_t, UDate&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const`
+  - `UBool icu::TimeArrayTimeZoneRule::getFirstStart(int32_t, int32_t, UDate&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::getNextStart(UDate, int32_t, int32_t, bool, UDate&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::getNextStart(UDate, int32_t, int32_t, UBool, UDate&) const`
+  - `UBool icu::TimeArrayTimeZoneRule::getNextStart(UDate, int32_t, int32_t, UBool, UDate&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, bool, UDate&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, UBool, UDate&) const`
+  - `UBool icu::TimeArrayTimeZoneRule::getPreviousStart(UDate, int32_t, int32_t, UBool, UDate&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const`
+  - `UBool icu::TimeArrayTimeZoneRule::isEquivalentTo(const TimeZoneRule&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::operator!=(const TimeZoneRule&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::operator!=(const TimeZoneRule&) const`
+  - `bool icu::TimeArrayTimeZoneRule::operator!=(const TimeZoneRule&) const override`
+- **`bool icu::TimeArrayTimeZoneRule::operator==(const TimeZoneRule&) const`**
+  - `UBool icu::TimeArrayTimeZoneRule::operator==(const TimeZoneRule&) const`
+  - `bool icu::TimeArrayTimeZoneRule::operator==(const TimeZoneRule&) const override`
+- **`bool icu::TimeZoneFormat::operator==(const Format&) const`**
+  - `UBool icu::TimeZoneFormat::operator==(const Format&) const`
+  - `bool icu::TimeZoneFormat::operator==(const Format&) const override`
+- **`bool icu::TimeZoneNames::operator==(const TimeZoneNames&) const`**
+  - `UBool icu::TimeZoneNames::operator==(const TimeZoneNames&) const=0`
+  - `bool icu::TimeZoneNames::operator==(const TimeZoneNames&) const=0`
+- **`bool icu::UCharCharacterIterator::hasNext()`**
+  - `UBool icu::UCharCharacterIterator::hasNext()`
+  - `UBool icu::UCharCharacterIterator::hasNext() override`
+- **`bool icu::UCharCharacterIterator::hasPrevious()`**
+  - `UBool icu::UCharCharacterIterator::hasPrevious()`
+  - `UBool icu::UCharCharacterIterator::hasPrevious() override`
+- **`bool icu::UCharCharacterIterator::operator==(const ForwardCharacterIterator&) const`**
+  - `UBool icu::UCharCharacterIterator::operator==(const ForwardCharacterIterator&) const`
+  - `bool icu::UCharCharacterIterator::operator==(const ForwardCharacterIterator&) const override`
+- **`bool icu::UnicodeSet::contains(UChar32) const`**
+  - `UBool icu::UnicodeSet::contains(UChar32) const`
+  - `UBool icu::UnicodeSet::contains(UChar32) const override`
+- **`bool icu::UnicodeString::hasMetaData() const`**
+  - `UBool icu::UnicodeString::hasMetaData() const`
+  - `UBool icu::UnicodeString::hasMetaData() const override`
+- **`bool icu::UnicodeStringAppendable::appendCodePoint(UChar32)`**
+  - `UBool icu::UnicodeStringAppendable::appendCodePoint(UChar32)`
+  - `UBool icu::UnicodeStringAppendable::appendCodePoint(UChar32) override`
+- **`bool icu::UnicodeStringAppendable::appendCodeUnit(char16_t)`**
+  - `UBool icu::UnicodeStringAppendable::appendCodeUnit(char16_t)`
+  - `UBool icu::UnicodeStringAppendable::appendCodeUnit(char16_t) override`
+- **`bool icu::UnicodeStringAppendable::appendString(const char16_t*, int32_t)`**
+  - `UBool icu::UnicodeStringAppendable::appendString(const char16_t*, int32_t)`
+  - `UBool icu::UnicodeStringAppendable::appendString(const char16_t*, int32_t) override`
+- **`bool icu::UnicodeStringAppendable::reserveAppendCapacity(int32_t)`**
+  - `UBool icu::UnicodeStringAppendable::reserveAppendCapacity(int32_t)`
+  - `UBool icu::UnicodeStringAppendable::reserveAppendCapacity(int32_t) override`
+- **`bool icu::VTimeZone::getNextTransition(UDate, bool, TimeZoneTransition&) const`**
+  - `UBool icu::VTimeZone::getNextTransition(UDate, UBool, TimeZoneTransition&) const`
+  - `UBool icu::VTimeZone::getNextTransition(UDate, UBool, TimeZoneTransition&) const override`
+- **`bool icu::VTimeZone::getPreviousTransition(UDate, bool, TimeZoneTransition&) const`**
+  - `UBool icu::VTimeZone::getPreviousTransition(UDate, UBool, TimeZoneTransition&) const`
+  - `UBool icu::VTimeZone::getPreviousTransition(UDate, UBool, TimeZoneTransition&) const override`
+- **`bool icu::VTimeZone::hasSameRules(const TimeZone&) const`**
+  - `UBool icu::VTimeZone::hasSameRules(const TimeZone&) const`
+  - `UBool icu::VTimeZone::hasSameRules(const TimeZone&) const override`
+- **`bool icu::VTimeZone::inDaylightTime(UDate, UErrorCode&) const`**
+  - `UBool icu::VTimeZone::inDaylightTime(UDate, UErrorCode&) const`
+  - `UBool icu::VTimeZone::inDaylightTime(UDate, UErrorCode&) const override`
+- **`bool icu::VTimeZone::operator==(const TimeZone&) const`**
+  - `UBool icu::VTimeZone::operator==(const TimeZone&) const`
+  - `bool icu::VTimeZone::operator==(const TimeZone&) const override`
+- **`bool icu::VTimeZone::useDaylightTime() const`**
+  - `UBool icu::VTimeZone::useDaylightTime() const`
+  - `UBool icu::VTimeZone::useDaylightTime() const override`
+- **`void icu::RuleBasedNumberFormat::setLenient(bool)`**
+  - `void icu::RuleBasedNumberFormat::setLenient(UBool)`
+  - `void icu::RuleBasedNumberFormat::setLenient(UBool) override`
+- **`void icu::RuleBasedTimeZone::getOffset(UDate, bool, int32_t&, int32_t&, UErrorCode&) const`**
+  - `void icu::RuleBasedTimeZone::getOffset(UDate, UBool, int32_t&, int32_t&, UErrorCode&) const`
+  - `void icu::RuleBasedTimeZone::getOffset(UDate, UBool, int32_t&, int32_t&, UErrorCode&) const override`
+- **`void icu::SimpleTimeZone::getOffset(UDate, bool, int32_t&, int32_t&, UErrorCode&) const`**
+  - `void icu::SimpleTimeZone::getOffset(UDate, UBool, int32_t&, int32_t&, UErrorCode&) const`
+  - `void icu::SimpleTimeZone::getOffset(UDate, UBool, int32_t&, int32_t&, UErrorCode&) const override`
+- **`void icu::VTimeZone::getOffset(UDate, bool, int32_t&, int32_t&, UErrorCode&) const`**
+  - `void icu::VTimeZone::getOffset(UDate, UBool, int32_t&, int32_t&, UErrorCode&) const`
+  - `void icu::VTimeZone::getOffset(UDate, UBool, int32_t&, int32_t&, UErrorCode&) const override`
+- **`void* icu::AnnualTimeZoneRule::clone() const`**
+  - `AnnualTimeZoneRule* icu::AnnualTimeZoneRule::clone() const`
+  - `AnnualTimeZoneRule* icu::AnnualTimeZoneRule::clone() const override`
+- **`void* icu::BasicTimeZone::clone() const`**
+  - `BasicTimeZone* icu::BasicTimeZone::clone() const override=0`
+  - `BasicTimeZone* icu::BasicTimeZone::clone() const=0`
+- **`void* icu::ChoiceFormat::clone() const`**
+  - `ChoiceFormat* icu::ChoiceFormat::clone() const`
+  - `ChoiceFormat* icu::ChoiceFormat::clone() const override`
+- **`void* icu::CurrencyAmount::clone() const`**
+  - `CurrencyAmount* icu::CurrencyAmount::clone() const`
+  - `CurrencyAmount* icu::CurrencyAmount::clone() const override`
+- **`void* icu::CurrencyUnit::clone() const`**
+  - `CurrencyUnit* icu::CurrencyUnit::clone() const`
+  - `CurrencyUnit* icu::CurrencyUnit::clone() const override`
+- **`void* icu::DateFormat::clone() const`**
+  - `DateFormat* icu::DateFormat::clone() const override=0`
+  - `DateFormat* icu::DateFormat::clone() const=0`
+- **`void* icu::DateIntervalFormat::clone() const`**
+  - `DateIntervalFormat* icu::DateIntervalFormat::clone() const`
+  - `DateIntervalFormat* icu::DateIntervalFormat::clone() const override`
+- **`void* icu::GregorianCalendar::clone() const`**
+  - `GregorianCalendar* icu::GregorianCalendar::clone() const`
+  - `GregorianCalendar* icu::GregorianCalendar::clone() const override`
+- **`void* icu::InitialTimeZoneRule::clone() const`**
+  - `InitialTimeZoneRule* icu::InitialTimeZoneRule::clone() const`
+  - `InitialTimeZoneRule* icu::InitialTimeZoneRule::clone() const override`
+- **`void* icu::MeasureFormat::clone() const`**
+  - `MeasureFormat* icu::MeasureFormat::clone() const`
+  - `MeasureFormat* icu::MeasureFormat::clone() const override`
+- **`void* icu::MessageFormat::clone() const`**
+  - `MessageFormat* icu::MessageFormat::clone() const`
+  - `MessageFormat* icu::MessageFormat::clone() const override`
+- **`void* icu::NumberFormat::clone() const`**
+  - `NumberFormat* icu::NumberFormat::clone() const override=0`
+  - `NumberFormat* icu::NumberFormat::clone() const=0`
+- **`void* icu::PluralFormat::clone() const`**
+  - `PluralFormat* icu::PluralFormat::clone() const`
+  - `PluralFormat* icu::PluralFormat::clone() const override`
+- **`void* icu::RuleBasedBreakIterator::clone() const`**
+  - `RuleBasedBreakIterator* icu::RuleBasedBreakIterator::clone() const`
+  - `RuleBasedBreakIterator* icu::RuleBasedBreakIterator::clone() const override`
+- **`void* icu::RuleBasedBreakIterator::createBufferClone(void*, int32_t&, UErrorCode&)`**
+  - `RuleBasedBreakIterator* icu::RuleBasedBreakIterator::createBufferClone(void*, int32_t&, UErrorCode&)`
+  - `RuleBasedBreakIterator* icu::RuleBasedBreakIterator::createBufferClone(void*, int32_t&, UErrorCode&) override`
+- **`void* icu::RuleBasedCollator::clone() const`**
+  - `RuleBasedCollator* icu::RuleBasedCollator::clone() const`
+  - `RuleBasedCollator* icu::RuleBasedCollator::clone() const override`
+- **`void* icu::RuleBasedNumberFormat::clone() const`**
+  - `RuleBasedNumberFormat* icu::RuleBasedNumberFormat::clone() const`
+  - `RuleBasedNumberFormat* icu::RuleBasedNumberFormat::clone() const override`
+- **`void* icu::RuleBasedTimeZone::clone() const`**
+  - `RuleBasedTimeZone* icu::RuleBasedTimeZone::clone() const`
+  - `RuleBasedTimeZone* icu::RuleBasedTimeZone::clone() const override`
+- **`void* icu::SelectFormat::clone() const`**
+  - `SelectFormat* icu::SelectFormat::clone() const`
+  - `SelectFormat* icu::SelectFormat::clone() const override`
+- **`void* icu::SimpleDateFormat::clone() const`**
+  - `SimpleDateFormat* icu::SimpleDateFormat::clone() const`
+  - `SimpleDateFormat* icu::SimpleDateFormat::clone() const override`
+- **`void* icu::SimpleTimeZone::clone() const`**
+  - `SimpleTimeZone* icu::SimpleTimeZone::clone() const`
+  - `SimpleTimeZone* icu::SimpleTimeZone::clone() const override`
+- **`void* icu::StringCharacterIterator::clone() const`**
+  - `StringCharacterIterator* icu::StringCharacterIterator::clone() const`
+  - `StringCharacterIterator* icu::StringCharacterIterator::clone() const override`
+- **`void* icu::StringSearch::safeClone() const`**
+  - `StringSearch* icu::StringSearch::safeClone() const`
+  - `StringSearch* icu::StringSearch::safeClone() const override`
+- **`void* icu::TimeArrayTimeZoneRule::clone() const`**
+  - `TimeArrayTimeZoneRule* icu::TimeArrayTimeZoneRule::clone() const`
+  - `TimeArrayTimeZoneRule* icu::TimeArrayTimeZoneRule::clone() const override`
+- **`void* icu::TimeUnit::clone() const`**
+  - `TimeUnit* icu::TimeUnit::clone() const`
+  - `TimeUnit* icu::TimeUnit::clone() const override`
+- **`void* icu::TimeUnitAmount::clone() const`**
+  - `TimeUnitAmount* icu::TimeUnitAmount::clone() const`
+  - `TimeUnitAmount* icu::TimeUnitAmount::clone() const override`
+- **`void* icu::TimeUnitFormat::clone() const`**
+  - `TimeUnitFormat* icu::TimeUnitFormat::clone() const`
+  - `TimeUnitFormat* icu::TimeUnitFormat::clone() const override`
+- **`void* icu::TimeZoneFormat::clone() const`**
+  - `TimeZoneFormat* icu::TimeZoneFormat::clone() const`
+  - `TimeZoneFormat* icu::TimeZoneFormat::clone() const override`
+- **`void* icu::UCharCharacterIterator::clone() const`**
+  - `UCharCharacterIterator* icu::UCharCharacterIterator::clone() const`
+  - `UCharCharacterIterator* icu::UCharCharacterIterator::clone() const override`
+- **`void* icu::UnicodeFilter::clone() const`**
+  - `UnicodeFilter* icu::UnicodeFilter::clone() const override=0`
+  - `UnicodeFilter* icu::UnicodeFilter::clone() const=0`
+- **`void* icu::UnicodeSet::clone() const`**
+  - `UnicodeSet* icu::UnicodeSet::clone() const`
+  - `UnicodeSet* icu::UnicodeSet::clone() const override`
+- **`void* icu::UnicodeString::clone() const`**
+  - `UnicodeString* icu::UnicodeString::clone() const`
+  - `UnicodeString* icu::UnicodeString::clone() const override`
+- **`void* icu::VTimeZone::clone() const`**
+  - `VTimeZone* icu::VTimeZone::clone() const`
+  - `VTimeZone* icu::VTimeZone::clone() const override`
 
 ## Colophon
 
-Contents generated by StableAPI tool on Wed Feb 19 10:40:39 PST 2020
+Contents generated by StableAPI tool on Wed Sep 29 11:59:13 PDT 2021
 
 Copyright © 2019 and later: Unicode, Inc. and others.
 License & terms of use: http://www.unicode.org/copyright.html

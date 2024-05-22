@@ -16,8 +16,8 @@
 #   <char>    any following data is for char break testing
 #   <title>   any following data is for title break testing
 #   <rules> rules ... </rules>  following data is tested against these rules.
-#                               Applies until a following occurence of <word>, <sent>, etc. or another <rules>
-#   <locale locale_name>  Switch to the named locale at the next occurence of <word>, <sent>, etc.
+#                               Applies until a following occurrence of <word>, <sent>, etc. or another <rules>
+#   <locale locale_name>  Switch to the named locale at the next occurrence of <word>, <sent>, etc.
 #   <data> ... </data>   test data.  May span multiple lines.
 #      <>        Break position, status == 0
 #      •         Break position, status == 0   (Bullet, \u2022)
@@ -32,7 +32,7 @@
 #   [ICU4C]   source/test/testdata/rbbitst.txt
 #   [ICU4J]   main/tests/core/src/com/ibm/icu/dev/test/rbbi/rbbitst.txt
 #
-# ICU4C's copy is the master.  If any changes are made to ICU4J's copy, make sure they
+# ICU4C's copy is the primary one.  If any changes are made to ICU4J's copy, make sure they
 #  are merged back into ICU4C's copy of the file, lest they get overwritten later.
 # TODO:  figure out how to have a single copy of the file for use by both C and Java.
 
@@ -61,6 +61,11 @@
 <sent>
 <data>\
 •Doctor with a D. •As in, Ph.D., you know.•</data>
+
+# ICU-21459 logic error.
+<locale en@ss=standard>
+<sent>
+<data>•on. •But after a day in the arena sun, the metal feels hot enough to blister my hands.•</data>
 
 # same as root (unless some exceptions are added!)
 <locale tfg@ss=standard>
@@ -289,7 +294,7 @@
 # वृद्धिसँग ;
 <data>•वृ•द्धि•सँ•ग•</data>
 # अंतःज्ञानी  ;
-<data>•अं•तः•ज्ञा•नी••</data>
+<data>•अं•तः•ज्ञा•नी• •</data>
 # गन्नदी॑धिम ;
 <data>•ग•न्न•दी॑•धि•म•</data>
 # प्प्रप॑द्ये॒ ;
@@ -319,7 +324,7 @@
 # भर्तुर्भोगः ;
 <data>•भ•र्तु•र्भो•गः•</data>
 # शॆत्युल  ;
-<data>•शॆ•त्यु•ल••</data>
+<data>•शॆ•त्यु•ल• •</data>
 # महारॆन्य ;
 <data>•म•हा•रॆ•न्य•</data>
 # सॆक्युल ;
@@ -1158,7 +1163,7 @@ Calls to xxx will return an implementor of this interface.  \u2029•</data>
 <data>•Parlez-•vous •français ?•</data>
 
 #
-#  Old Line Break Test data.  Orginally located in RBBITest::TestDefaultRuleBasedLineIteration()
+#  Old Line Break Test data.  Originally located in RBBITest::TestDefaultRuleBasedLineIteration()
 #
 
 <line>
@@ -1321,7 +1326,8 @@ part •of •the •Luang •Prabang •Range •(ทิว•เขา•ห�
 \u0E14\u0E49\u0E27\u0E22<200>\u0e2b\u0e25\u0e32\u0e22<200>\
 \u0e1e\u0e22\u0e32\u0e07\u0e04\u0e4c<200></data>
 
-# Test data originally from http://bugs.icu-project.org/trac/search?q=r30327
+# Test data originally from
+# ICU-8576 svn r30327 = git commit 62d26cc5fe8cc66696143c44a43d664c2d7be100
 <data>•กู<200> •กิน<200>กุ้ง<200> •ปิ้่<200>งอ<200>ยู่<200>ใน<200>ถ้ำ<200></data>
 
 <data>•\u0E01\u0E39<200>\u0020•\u0E01\u0E34\u0E19<200>\u0E01\u0E38\u0E49\u0E07<200>\
@@ -1340,7 +1346,7 @@ part •of •the •Luang •Prabang •Range •(ทิว•เขา•ห�
 #  the end of the word and not treated as an independent punctuation mark.
 #
 #  the one time where the paiyannoi occurs somewhere other than at the end
-#  of a word is in the Thai abbrevation for "etc.", which both begins and
+#  of a word is in the Thai abbreviation for "etc.", which both begins and
 #  ends with a paiyannoi
 #
 <line>
@@ -1433,6 +1439,12 @@ Bangkok)•</data>
 <data>•ດີ•ຂອບໃຈ•</data>
 <data>•ເຈົ້າ•ເວົ້າ•ພາສາ•ອັງກິດ•ໄດ້•ບໍ່•</data>
 <data>•ກະລຸນາ•ເວົ້າ•ຊ້າ•ໆ•</data>
+# More checks for ICU-21413 (check both moved and added entries)
+<line>
+<data>•ກໍ•ກໍ່•ກໍ້•</data>
+<data>•ກວາກຊວາກ•ກະເຈາະກະຈອກ•</data>
+<data>•ກະຊວງປ້ອງກັນຄວາມສະຫງົບ•</data>
+<data>•ໄຮ•ໄຮ່•ໄຮ້•</data>
 
 ##########################################################################################
 #
@@ -1453,7 +1465,8 @@ Bangkok)•</data>
 #
 ##########################################################################################
 
-# Test data originally from http://bugs.icu-project.org/trac/search?q=r30327
+# Test data originally from
+# ICU-8576 svn r30327 = git commit 62d26cc5fe8cc66696143c44a43d664c2d7be100
 #  from the file testdata/wordsegments.txt
 <locale en>
 <word>
@@ -1991,3 +2004,23 @@ Bangkok)•</data>
 •
 •より<400>詳しい<400>こと<400>を<400>お<400>知<400>り<400>に<400>なり<400>たい<400>方<400>は<400>、•Glossary<200>,• •Technical<200> •Introduction<200> •および<400> •Useful<200> •Resources<200>を<400>ご<400>参照<400>くだ<400>さい<400>。•
 •</data>
+
+
+#
+# Bug 20303 Multiple Look-ahead rules with similar contexts.
+#           Check that samples of such rules are being handled correctly.
+#
+
+<rules>
+!!forward;
+!!quoted_literals_only;
+!!chain;
+[a] [b] / [c] [d];
+[a] [b] / [c] [d] {100};
+[a] [b] / [e] [f] {200};
+[a] [b] / [e] [g] {300};
+[a] [b] [c] [h] {400};
+[x] [a] [b] / [c] [d] {500};
+[y] [a] [b] [c] [d] {600};
+</rules>
+<data>•ab<100>c•d•ab<200>e•f•ab<300>e•g•abch<400>xab<500>c•d•yabcd<600></data>

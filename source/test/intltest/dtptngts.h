@@ -19,7 +19,7 @@
  * Test basic functionality of various API functions
  **/
 class IntlTestDateTimePatternGeneratorAPI : public IntlTest {
-    void runIndexedTest( int32_t index, UBool exec, const char* &name, char* par = NULL );
+    void runIndexedTest( int32_t index, UBool exec, const char* &name, char* par = NULL ) override;
 
 private:
     /**
@@ -35,6 +35,9 @@ private:
     void testJjMapping();
     void test20640_HourCyclArsEnNH();
     void testFallbackWithDefaultRootLocale();
+    void testGetDefaultHourCycle_OnEmptyInstance();
+    void test_jConsistencyOddLocales();
+    void testBestPattern();
 };
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
