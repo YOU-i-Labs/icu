@@ -1,13 +1,13 @@
 add_executable(
     genrb
     errmsg.c
-    genrb.c
+    genrb.cpp
     parse.cpp
     read.c
-    reslist.c
+    reslist.cpp
     ustr.c
     rbutil.c
-    wrtjava.c
+    wrtjava.cpp
     rle.c
     wrtxml.cpp
     prscmnts.cpp

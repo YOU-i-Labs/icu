@@ -26,6 +26,8 @@ add_library(
     dictionarydata.cpp
     dtintrv.cpp
     errorcode.cpp
+    filteredbrk.cpp
+    filteredbrk.cpp
     filterednormalizer2.cpp
     hash.h
     icudataver.c
@@ -54,6 +56,7 @@ add_library(
     normlzr.cpp
     parsepos.cpp
     patternprops.cpp
+    pluralmap.cpp
     propname.cpp
     propname.h
     propsvec.c
@@ -77,8 +80,8 @@ add_library(
     rbbistbl.cpp
     rbbitblb.cpp
     rbbitblb.h
-    resbund.cpp
     resbund_cnv.cpp
+    resbund.cpp
     ruleiter.cpp
     ruleiter.h
     schriter.cpp
@@ -100,9 +103,9 @@ add_library(
     uarrsort.c
     uarrsort.h
     uassert.h
-    ubidi.c
     ubidi_props.c
     ubidi_props.h
+    ubidi.c
     ubidiimp.h
     ubidiln.c
     ubidiwrt.c
@@ -110,22 +113,20 @@ add_library(
     ubrkimpl.h
     ucase.cpp
     ucase.h
-    ucasemap.cpp
     ucasemap_titlecase_brkiter.cpp
+    ucasemap.cpp
     ucat.c
     uchar.c
     ucharstrie.cpp
     ucharstriebuilder.cpp
     ucharstrieiterator.cpp
     uchriter.cpp
-    ucln.h
     ucln_cmn.cpp
     ucln_cmn.h
     ucln_imp.h
+    ucln.h
     ucmndata.c
     ucmndata.h
-    ucnv.c
-    ucnv2022.cpp
     ucnv_bld.cpp
     ucnv_bld.h
     ucnv_cb.c
@@ -144,6 +145,8 @@ add_library(
     ucnv_u32.c
     ucnv_u7.c
     ucnv_u8.c
+    ucnv.c
+    ucnv2022.cpp
     ucnvbocu.cpp
     ucnvdisp.c
     ucnvhz.c
@@ -162,9 +165,9 @@ add_library(
     udataswp.h
     uenum.c
     uenumimp.h
+    uhash_us.cpp
     uhash.c
     uhash.h
-    uhash_us.cpp
     uidna.cpp
     uinit.cpp
     uinvchar.c
@@ -173,9 +176,9 @@ add_library(
     ulist.c
     ulist.h
     ulistformatter.cpp
-    uloc.cpp
     uloc_keytype.cpp
     uloc_tag.c
+    uloc.cpp
     ulocimp.h
     umapfile.c
     umapfile.h
@@ -186,17 +189,17 @@ add_library(
     unifiedcache.cpp
     unifilt.cpp
     unifunct.cpp
-    uniset.cpp
     uniset_closure.cpp
     uniset_props.cpp
+    uniset.cpp
     unisetspan.cpp
     unisetspan.h
-    unistr.cpp
-    unistr_case.cpp
     unistr_case_locale.cpp
+    unistr_case.cpp
     unistr_cnv.cpp
     unistr_props.cpp
     unistr_titlecase_brkiter.cpp
+    unistr.cpp
     unorm.cpp
     unormcmp.cpp
     unormimp.h
@@ -211,11 +214,11 @@ add_library(
     ureslocs.h
     usc_impl.c
     usc_impl.h
-    uscript.c
     uscript_props.cpp
-    uset.cpp
+    uscript.c
     uset_imp.h
     uset_props.cpp
+    uset.cpp
     usetiter.cpp
     ushape.cpp
     usprep.cpp
@@ -225,8 +228,8 @@ add_library(
     ustr_imp.h
     ustr_titlecase_brkiter.cpp
     ustr_wcs.cpp
-    ustrcase.cpp
     ustrcase_locale.cpp
+    ustrcase.cpp
     ustrenum.cpp
     ustrenum.h
     ustrfmt.c
@@ -235,17 +238,17 @@ add_library(
     ustrtrns.cpp
     utext.cpp
     utf_impl.c
+    util_props.cpp
     util.cpp
     util.h
-    util_props.cpp
     utrace.c
     utracimp.h
     utrie.cpp
     utrie.h
-    utrie2.cpp
-    utrie2.h
     utrie2_builder.cpp
     utrie2_impl.h
+    utrie2.cpp
+    utrie2.h
     uts46.cpp
     utypes.c
     uvector.cpp

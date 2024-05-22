@@ -1,5 +1,6 @@
 add_library(
     icui18n
+    affixpatternparser.cpp
     alphaindex.cpp
     anytrans.cpp
     anytrans.h
@@ -72,28 +73,33 @@ add_library(
     dcfmtsym.cpp
     decContext.c
     decContext.h
-    decNumber.c
-    decNumber.h
-    decNumberLocal.h
     decfmtst.cpp
     decimalformatpattern.cpp
     decimfmt.cpp
+    decimfmtimpl.cpp
+    decNumber.c
+    decNumber.h
+    decNumberLocal.h
+    digitaffix.cpp
+    digitaffixesandpadding.cpp
+    digitformatter.cpp
+    digitgrouping.cpp
+    digitinterval.cpp
     digitlst.cpp
     digitlst.h
     dtfmtsym.cpp
     dtitv_impl.h
     dtitvfmt.cpp
     dtitvinf.cpp
-    dtptngen.cpp
     dtptngen_impl.h
+    dtptngen.cpp
     dtrule.cpp
     esctrn.cpp
     esctrn.h
     ethpccal.cpp
     ethpccal.h
-    filteredbrk.cpp
-    fmtable.cpp
     fmtable_cnv.cpp
+    fmtable.cpp
     format.cpp
     fphdlimp.cpp
     fphdlimp.h
@@ -119,8 +125,8 @@ add_library(
     measfmt.cpp
     measunit.cpp
     measure.cpp
-    msgfmt.cpp
     msgfmt_impl.h
+    msgfmt.cpp
     name2uni.cpp
     name2uni.h
     nfrlist.h
@@ -140,15 +146,15 @@ add_library(
     olsontz.h
     persncal.cpp
     persncal.h
+    pluralaffix.cpp
     plurfmt.cpp
-    plurrule.cpp
     plurrule_impl.h
+    plurrule.cpp
+    precision.cpp
     quant.cpp
     quant.h
     quantityformatter.cpp
     rbnf.cpp
-    rbt.cpp
-    rbt.h
     rbt_data.cpp
     rbt_data.h
     rbt_pars.cpp
@@ -157,6 +163,8 @@ add_library(
     rbt_rule.h
     rbt_set.cpp
     rbt_set.h
+    rbt.cpp
+    rbt.h
     rbtz.cpp
     regexcmp.cpp
     regexcmp.h
@@ -183,6 +191,7 @@ add_library(
     selfmtimpl.h
     sharedbreakiterator.cpp
     simpletz.cpp
+    smallintformatter.cpp
     smpdtfmt.cpp
     smpdtfst.cpp
     sortkey.cpp
@@ -210,17 +219,17 @@ add_library(
     tridpars.h
     tzfmt.cpp
     tzgnames.cpp
-    tznames.cpp
     tznames_impl.cpp
+    tznames.cpp
     tzrule.cpp
     tztrans.cpp
     ucal.cpp
     ucln_in.cpp
     ucln_in.h
-    ucol.cpp
     ucol_imp.h
     ucol_res.cpp
     ucol_sit.cpp
+    ucol.cpp
     ucoleitr.cpp
     ucsdet.cpp
     ucurr.cpp
@@ -231,8 +240,8 @@ add_library(
     ufieldpositer.cpp
     uitercollationiterator.cpp
     ulocdata.c
-    umsg.cpp
     umsg_imp.h
+    umsg.cpp
     unesctrn.cpp
     unesctrn.h
     uni2name.cpp
@@ -244,7 +253,6 @@ add_library(
     uregexc.cpp
     uregion.cpp
     usearch.cpp
-    uspoof.cpp
     uspoof_build.cpp
     uspoof_conf.cpp
     uspoof_conf.h
@@ -252,11 +260,14 @@ add_library(
     uspoof_impl.h
     uspoof_wsconf.cpp
     uspoof_wsconf.h
+    uspoof.cpp
     usrchimp.h
     utf16collationiterator.cpp
     utf8collationiterator.cpp
     utmscale.c
     utrans.cpp
+    valueformatter.cpp
+    visibledigits.cpp
     vtzone.cpp
     vzone.cpp
     vzone.h

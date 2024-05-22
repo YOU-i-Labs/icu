@@ -1,6 +1,6 @@
 add_executable(
     makeconv
-    makeconv.c
+    makeconv.cpp
     ucnvstat.c
     genmbcs.cpp
     gencnvex.c
