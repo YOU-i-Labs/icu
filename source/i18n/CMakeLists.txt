@@ -81,10 +81,13 @@ add_library(
     double-conversion-bignum-dtoa.cpp
     double-conversion-bignum.cpp
     double-conversion-cached-powers.cpp
-    double-conversion-diy-fp.cpp
+    double-conversion-double-to-string.cpp
+    double-conversion-double-to-string.h
     double-conversion-fast-dtoa.cpp
+    double-conversion-string-to-double.cpp
+    double-conversion-string-to-double.h
     double-conversion-strtod.cpp
-    double-conversion.cpp
+    double-conversion-strtod.h
     dtfmtsym.cpp
     dtitv_impl.h
     dtitvfmt.cpp
@@ -101,6 +104,12 @@ add_library(
     fmtable_cnv.cpp
     fmtable.cpp
     format.cpp
+    formatted_string_builder.cpp
+    formatted_string_builder.h
+    formattedval_impl.h
+    formattedval_iterimpl.cpp
+    formattedval_sbimpl.cpp
+    formattedvalue.cpp
     fphdlimp.cpp
     fphdlimp.h
     fpositer.cpp
@@ -164,6 +173,7 @@ add_library(
     number_modifiers.h
     number_multiplier.cpp
     number_notation.cpp
+    number_output.cpp
     number_padding.cpp
     number_patternmodifier.cpp
     number_patternmodifier.h
@@ -174,8 +184,6 @@ add_library(
     number_scientific.cpp
     number_scientific.h
     number_skeletons.cpp
-    number_stringbuilder.cpp
-    number_stringbuilder.h
     number_types.h
     number_utils.cpp
     number_utils.h
@@ -187,7 +195,6 @@ add_library(
     numparse_impl.cpp
     numparse_parsednumber.cpp
     numparse_scientific.cpp
-    numparse_stringsegment.cpp
     numparse_symbols.cpp
     numparse_validators.cpp
     numrange_fluent.cpp
@@ -245,6 +252,8 @@ add_library(
     smpdtfst.cpp
     sortkey.cpp
     standardplural.cpp
+    string_segment.cpp
+    string_segment.h
     strmatch.cpp
     strmatch.h
     strrepl.cpp
