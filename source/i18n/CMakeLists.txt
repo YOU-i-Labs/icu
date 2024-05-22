@@ -70,6 +70,8 @@ add_library(
     currunit.cpp
     dangical.cpp
     datefmt.cpp
+    dayperiodrules.cpp
+    dayperiodrules.h
     dcfmtsym.cpp
     decContext.c
     decContext.h
@@ -121,7 +123,6 @@ add_library(
     islamcal.h
     japancal.cpp
     japancal.h
-    locdspnm.cpp
     measfmt.cpp
     measunit.cpp
     measure.cpp
@@ -195,6 +196,7 @@ add_library(
     smpdtfmt.cpp
     smpdtfst.cpp
     sortkey.cpp
+    standardplural.cpp
     strmatch.cpp
     strmatch.h
     strrepl.cpp
@@ -232,8 +234,6 @@ add_library(
     ucol.cpp
     ucoleitr.cpp
     ucsdet.cpp
-    ucurr.cpp
-    ucurrimp.h
     udat.cpp
     udateintervalformat.cpp
     udatpg.cpp

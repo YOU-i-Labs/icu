@@ -17,6 +17,7 @@ add_library(
     cmemory.c
     cmemory.h
     cpputils.h
+    cstr.cpp
     cstring.c
     cstring.h
     cwchar.c
@@ -40,6 +41,7 @@ add_library(
     locbased.cpp
     locbased.h
     locdispnames.cpp
+    locdspnm.cpp
     locid.cpp
     loclikely.cpp
     locmap.c
@@ -82,6 +84,7 @@ add_library(
     rbbitblb.h
     resbund_cnv.cpp
     resbund.cpp
+    resource.cpp
     ruleiter.cpp
     ruleiter.h
     schriter.cpp
@@ -96,7 +99,7 @@ add_library(
     servrbf.cpp
     servslkf.cpp
     sharedobject.cpp
-    simplepatternformatter.cpp
+    simpleformatter.cpp
     sprpimpl.h
     stringpiece.cpp
     stringtriebuilder.cpp
@@ -158,6 +161,7 @@ add_library(
     ucnvsel.cpp
     ucol_swp.cpp
     ucol_swp.h
+    ucurr.cpp
     udata.cpp
     udatamem.c
     udatamem.h
@@ -208,7 +212,7 @@ add_library(
     uprops.h
     ures_cnv.c
     uresbund.cpp
-    uresdata.c
+    uresdata.cpp
     uresdata.h
     uresimp.h
     ureslocs.h

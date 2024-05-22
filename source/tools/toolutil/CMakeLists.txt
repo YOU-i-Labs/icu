@@ -14,7 +14,7 @@ add_library(
     ppucd.cpp
     swapimpl.cpp
     toolutil.cpp
-    ucbuf.c
+    ucbuf.cpp
     ucln_tu.cpp
     ucm.c
     ucmstate.c
