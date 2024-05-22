@@ -1,4 +1,4 @@
-add_library(icustubdata stubdata.c)
+add_library(icustubdata stubdata.cpp)
 
 if(U_USING_ICU_NAMESPACE)
   target_compile_definitions(icustubdata PUBLIC U_USING_ICU_NAMESPACE=1)

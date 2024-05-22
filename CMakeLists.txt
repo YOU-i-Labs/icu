@@ -9,7 +9,7 @@ HunterGate(
     SHA1 "758836c69d9ecb7a773b8e4b64e25d0fa4e76582"
 )
 
-project(ICU VERSION 58.2 LANGUAGES C CXX)
+project(ICU VERSION 60.2 LANGUAGES C CXX)
 
 # The PS4 compiler does not properly get detected as supporting assembly. Disable that language requirement when building for PS4 (and using an external data archive).
 if (NOT (PS4 OR PS5) OR NOT ICU_USE_EXTERNAL_DATA_ARCHIVE)

@@ -6,21 +6,24 @@ add_library(
     brkeng.cpp
     brkeng.h
     brkiter.cpp
+    bytesinkutil.cpp
+    bytesinkutil.h
     bytestream.cpp
     bytestrie.cpp
     bytestriebuilder.cpp
     bytestrieiterator.cpp
     caniter.cpp
+    edits.cpp
     chariter.cpp
     charstr.cpp
     charstr.h
-    cmemory.c
+    cmemory.cpp
     cmemory.h
     cpputils.h
     cstr.cpp
-    cstring.c
+    cstring.cpp
     cstring.h
-    cwchar.c
+    cwchar.cpp
     cwchar.h
     dictbe.cpp
     dictbe.h
@@ -31,7 +34,7 @@ add_library(
     filteredbrk.cpp
     filterednormalizer2.cpp
     hash.h
-    icudataver.c
+    icudataver.cpp
     icuplug.cpp
     icuplugimp.h
     listformatter.cpp
@@ -44,7 +47,7 @@ add_library(
     locdspnm.cpp
     locid.cpp
     loclikely.cpp
-    locmap.c
+    locmap.cpp
     locmap.h
     locresdata.cpp
     locutil.cpp
@@ -61,12 +64,14 @@ add_library(
     pluralmap.cpp
     propname.cpp
     propname.h
-    propsvec.c
+    propsvec.cpp
     propsvec.h
     punycode.cpp
     punycode.h
     putil.cpp
     putilimp.h
+    rbbi_cache.cpp
+    rbbi_cache.h
     rbbi.cpp
     rbbidata.cpp
     rbbidata.h
@@ -103,23 +108,23 @@ add_library(
     sprpimpl.h
     stringpiece.cpp
     stringtriebuilder.cpp
-    uarrsort.c
+    uarrsort.cpp
     uarrsort.h
     uassert.h
-    ubidi_props.c
+    ubidi_props.cpp
     ubidi_props.h
-    ubidi.c
+    ubidi.cpp
     ubidiimp.h
-    ubidiln.c
-    ubidiwrt.c
+    ubidiln.cpp
+    ubidiwrt.cpp
     ubrk.cpp
     ubrkimpl.h
     ucase.cpp
     ucase.h
     ucasemap_titlecase_brkiter.cpp
     ucasemap.cpp
-    ucat.c
-    uchar.c
+    ucat.cpp
+    uchar.cpp
     ucharstrie.cpp
     ucharstriebuilder.cpp
     ucharstrieiterator.cpp
@@ -128,65 +133,65 @@ add_library(
     ucln_cmn.h
     ucln_imp.h
     ucln.h
-    ucmndata.c
+    ucmndata.cpp
     ucmndata.h
     ucnv_bld.cpp
     ucnv_bld.h
-    ucnv_cb.c
-    ucnv_cnv.c
+    ucnv_cb.cpp
+    ucnv_cnv.cpp
     ucnv_cnv.h
-    ucnv_ct.c
-    ucnv_err.c
+    ucnv_ct.cpp
+    ucnv_err.cpp
     ucnv_ext.cpp
     ucnv_ext.h
     ucnv_imp.h
     ucnv_io.cpp
     ucnv_io.h
-    ucnv_lmb.c
-    ucnv_set.c
-    ucnv_u16.c
-    ucnv_u32.c
-    ucnv_u7.c
-    ucnv_u8.c
-    ucnv.c
+    ucnv_lmb.cpp
+    ucnv_set.cpp
+    ucnv_u16.cpp
+    ucnv_u32.cpp
+    ucnv_u7.cpp
+    ucnv_u8.cpp
+    ucnv.cpp
     ucnv2022.cpp
     ucnvbocu.cpp
-    ucnvdisp.c
-    ucnvhz.c
-    ucnvisci.c
-    ucnvlat1.c
+    ucnvdisp.cpp
+    ucnvhz.cpp
+    ucnvisci.cpp
+    ucnvlat1.cpp
     ucnvmbcs.cpp
     ucnvmbcs.h
-    ucnvscsu.c
+    ucnvscsu.cpp
     ucnvsel.cpp
     ucol_swp.cpp
     ucol_swp.h
     ucurr.cpp
     udata.cpp
-    udatamem.c
+    udatamem.cpp
     udatamem.h
-    udataswp.c
+    udataswp.cpp
     udataswp.h
-    uenum.c
+    uenum.cpp
     uenumimp.h
     uhash_us.cpp
-    uhash.c
+    uhash.cpp
     uhash.h
     uidna.cpp
     uinit.cpp
-    uinvchar.c
+    uinvchar.cpp
     uinvchar.h
     uiter.cpp
-    ulist.c
+    ulist.cpp
     ulist.h
     ulistformatter.cpp
     uloc_keytype.cpp
-    uloc_tag.c
+    uloc_tag.cpp
     uloc.cpp
     ulocimp.h
-    umapfile.c
+    umapfile.cpp
     umapfile.h
-    umath.c
+    umath.cpp
     umutex.cpp
     umutex.h
     unames.cpp
@@ -210,16 +215,16 @@ add_library(
     uobject.cpp
     uprops.cpp
     uprops.h
-    ures_cnv.c
+    ures_cnv.cpp
     uresbund.cpp
     uresdata.cpp
     uresdata.h
     uresimp.h
     ureslocs.h
-    usc_impl.c
+    usc_impl.cpp
     usc_impl.h
     uscript_props.cpp
-    uscript.c
+    uscript.cpp
     uset_imp.h
     uset_props.cpp
     uset.cpp
@@ -236,16 +241,16 @@ add_library(
     ustrcase.cpp
     ustrenum.cpp
     ustrenum.h
-    ustrfmt.c
+    ustrfmt.cpp
     ustrfmt.h
     ustring.cpp
     ustrtrns.cpp
     utext.cpp
-    utf_impl.c
+    utf_impl.cpp
     util_props.cpp
     util.cpp
     util.h
-    utrace.c
+    utrace.cpp
     utracimp.h
     utrie.cpp
     utrie.h
@@ -254,14 +259,14 @@ add_library(
     utrie2.cpp
     utrie2.h
     uts46.cpp
-    utypes.c
+    utypes.cpp
     uvector.cpp
     uvector.h
     uvectr32.cpp
     uvectr32.h
     uvectr64.cpp
     uvectr64.h
-    wintz.c
+    wintz.cpp
     wintz.h
 )
 

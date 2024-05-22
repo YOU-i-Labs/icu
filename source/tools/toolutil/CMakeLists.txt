@@ -3,12 +3,12 @@ add_library(
     collationinfo.cpp
     dbgutil.cpp
     denseranges.cpp
-    filestrm.c
+    filestrm.cpp
     filetools.cpp
-    flagparser.c
+    flagparser.cpp
     package.cpp
-    pkg_genc.c
-    pkg_gencmn.c
+    pkg_genc.cpp
+    pkg_gencmn.cpp
     pkg_icu.cpp
     pkgitems.cpp
     ppucd.cpp
@@ -16,13 +16,13 @@ add_library(
     toolutil.cpp
     ucbuf.cpp
     ucln_tu.cpp
-    ucm.c
-    ucmstate.c
+    ucm.cpp
+    ucmstate.cpp
     udbgutil.cpp
-    unewdata.c
-    uoptions.c
-    uparse.c
-    writesrc.c
+    unewdata.cpp
+    uoptions.cpp
+    uparse.cpp
+    writesrc.cpp
     xmlparser.cpp
 )
 

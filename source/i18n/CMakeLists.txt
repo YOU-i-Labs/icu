@@ -73,13 +73,13 @@ add_library(
     dayperiodrules.cpp
     dayperiodrules.h
     dcfmtsym.cpp
-    decContext.c
+    decContext.cpp
     decContext.h
     decfmtst.cpp
     decimalformatpattern.cpp
     decimfmt.cpp
     decimfmtimpl.cpp
-    decNumber.c
+    decNumber.cpp
     decNumber.h
     decNumberLocal.h
     digitaffix.cpp
@@ -135,11 +135,44 @@ add_library(
     nfrule.cpp
     nfrule.h
     nfsubs.cpp
+    nfsubs.cpp
     nfsubs.h
     nortrans.cpp
     nortrans.h
+    nounit.cpp
     nultrans.cpp
     nultrans.h
+    number_affixutils.cpp
+    number_affixutils.h
+    number_compact.cpp
+    number_compact.h
+    number_decimalquantity.cpp
+    number_decimalquantity.h
+    number_decimfmtprops.cpp
+    number_decimfmtprops.h
+    number_fluent.cpp
+    number_formatimpl.cpp
+    number_formatimpl.h
+    number_grouping.cpp
+    number_integerwidth.cpp
+    number_longnames.cpp
+    number_longnames.h
+    number_modifiers.cpp
+    number_modifiers.h
+    number_notation.cpp
+    number_padding.cpp
+    number_patternmodifier.cpp
+    number_patternmodifier.h
+    number_patternstring.cpp
+    number_patternstring.h
+    number_rounding.cpp
+    number_roundingutils.h
+    number_scientific.cpp
+    number_scientific.h
+    number_stringbuilder.cpp
+    number_stringbuilder.h
+    number_types.h
+    number_utils.h
     numfmt.cpp
     numsys.cpp
     olsontz.cpp
@@ -238,7 +271,7 @@ add_library(
     udatpg.cpp
     ufieldpositer.cpp
     uitercollationiterator.cpp
-    ulocdata.c
+    ulocdata.cpp
     umsg_imp.h
     umsg.cpp
     unesctrn.cpp
@@ -261,7 +294,7 @@ add_library(
     usrchimp.h
     utf16collationiterator.cpp
     utf8collationiterator.cpp
-    utmscale.c
+    utmscale.cpp
     utrans.cpp
     valueformatter.cpp
     visibledigits.cpp

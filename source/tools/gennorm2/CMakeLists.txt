@@ -1,4 +1,9 @@
-add_executable(gennorm2 gennorm2.cpp n2builder.cpp)
+add_executable(gennorm2
+    extradata.cpp
+    gennorm2.cpp
+    n2builder.cpp
+    norms.cpp
+)
 
 target_link_libraries(gennorm2 icutu icui18n icuuc)
 
