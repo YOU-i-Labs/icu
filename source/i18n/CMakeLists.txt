@@ -1,3 +1,8 @@
+set(sources)
+if(NOT ICU_WINDOWS_STORE)
+  list(APPEND sources winnmfmt.cpp winnmfmt.h)
+endif()
+
 add_library(
     icui18n
     ${sources}
@@ -263,8 +268,6 @@ add_library(
     vzone.h
     windtfmt.cpp
     windtfmt.h
-    winnmfmt.cpp
-    winnmfmt.h
     wintzimpl.cpp
     wintzimpl.h
     zonemeta.cpp
