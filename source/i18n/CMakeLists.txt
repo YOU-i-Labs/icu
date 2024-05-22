@@ -114,7 +114,6 @@ add_library(
     gregoimp.h
     hebrwcal.cpp
     hebrwcal.h
-    identifier_info.cpp
     indiancal.cpp
     indiancal.h
     inputext.cpp
@@ -258,8 +257,6 @@ add_library(
     uspoof_conf.h
     uspoof_impl.cpp
     uspoof_impl.h
-    uspoof_wsconf.cpp
-    uspoof_wsconf.h
     uspoof.cpp
     usrchimp.h
     utf16collationiterator.cpp

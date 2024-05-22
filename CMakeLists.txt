@@ -9,7 +9,7 @@ HunterGate(
     SHA1 "758836c69d9ecb7a773b8e4b64e25d0fa4e76582"
 )
 
-project(ICU VERSION 57.1 LANGUAGES C CXX)
+project(ICU VERSION 58.2 LANGUAGES C CXX)
 
 # The PS4 compiler does not properly get detected as supporting assembly. Disable that language requirement when building for PS4 (and using an external data archive).
 if (NOT (PS4 OR PS5) OR NOT ICU_USE_EXTERNAL_DATA_ARCHIVE)
@@ -138,8 +138,10 @@ endif()
 ### }
 
 add_subdirectory(source/common) # icuuc
-add_subdirectory(source/layout) # icule
-add_subdirectory(source/layoutex) # iculx
+
+# We can't build ParagraphLayout directly because it depends on harfbuzz. We will need to build it separately.
+# add_subdirectory(source/layoutex) # iculx
+
 add_subdirectory(source/i18n) # icui18n
 
 if(ICU_BUILD_IO)
