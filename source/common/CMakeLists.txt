@@ -13,7 +13,7 @@ add_library(
     bytestriebuilder.cpp
     bytestrieiterator.cpp
     caniter.cpp
-    edits.cpp
+    characterproperties.cpp
     chariter.cpp
     charstr.cpp
     charstr.h
@@ -29,6 +29,7 @@ add_library(
     dictbe.h
     dictionarydata.cpp
     dtintrv.cpp
+    edits.cpp
     errorcode.cpp
     filteredbrk.cpp
     filteredbrk.cpp
@@ -37,7 +38,6 @@ add_library(
     icudataver.cpp
     icuplug.cpp
     icuplugimp.h
-    listformatter.cpp
     loadednormalizer2impl.cpp
     localsvc.h
     locavailable.cpp
@@ -106,6 +106,8 @@ add_library(
     sharedobject.cpp
     simpleformatter.cpp
     sprpimpl.h
+    static_unicode_sets.cpp
+    static_unicode_sets.h
     stringpiece.cpp
     stringtriebuilder.cpp
     uarrsort.cpp
@@ -166,6 +168,7 @@ add_library(
     ucnvsel.cpp
     ucol_swp.cpp
     ucol_swp.h
+    ucptrie.cpp
     ucurr.cpp
     udata.cpp
     udatamem.cpp
@@ -184,7 +187,6 @@ add_library(
     uiter.cpp
     ulist.cpp
     ulist.h
-    ulistformatter.cpp
     uloc_keytype.cpp
     uloc_tag.cpp
     uloc.cpp
@@ -192,6 +194,7 @@ add_library(
     umapfile.cpp
     umapfile.h
     umath.cpp
+    umutablecptrie.cpp
     umutex.cpp
     umutex.h
     unames.cpp
@@ -252,6 +255,7 @@ add_library(
     util.h
     utrace.cpp
     utracimp.h
+    utrie_swap.cpp
     utrie.cpp
     utrie.h
     utrie2_builder.cpp

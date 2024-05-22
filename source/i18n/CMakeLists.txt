@@ -1,6 +1,5 @@
 add_library(
     icui18n
-    affixpatternparser.cpp
     alphaindex.cpp
     anytrans.cpp
     anytrans.h
@@ -75,20 +74,17 @@ add_library(
     dcfmtsym.cpp
     decContext.cpp
     decContext.h
-    decfmtst.cpp
-    decimalformatpattern.cpp
     decimfmt.cpp
-    decimfmtimpl.cpp
     decNumber.cpp
     decNumber.h
     decNumberLocal.h
-    digitaffix.cpp
-    digitaffixesandpadding.cpp
-    digitformatter.cpp
-    digitgrouping.cpp
-    digitinterval.cpp
-    digitlst.cpp
-    digitlst.h
+    double-conversion-bignum-dtoa.cpp
+    double-conversion-bignum.cpp
+    double-conversion-cached-powers.cpp
+    double-conversion-diy-fp.cpp
+    double-conversion-fast-dtoa.cpp
+    double-conversion-strtod.cpp
+    double-conversion.cpp
     dtfmtsym.cpp
     dtitv_impl.h
     dtitvfmt.cpp
@@ -96,6 +92,8 @@ add_library(
     dtptngen_impl.h
     dtptngen.cpp
     dtrule.cpp
+    erarules.cpp
+    erarules.h
     esctrn.cpp
     esctrn.h
     ethpccal.cpp
@@ -122,6 +120,7 @@ add_library(
     islamcal.h
     japancal.cpp
     japancal.h
+    listformatter.cpp
     measfmt.cpp
     measunit.cpp
     measure.cpp
@@ -144,8 +143,11 @@ add_library(
     nultrans.h
     number_affixutils.cpp
     number_affixutils.h
+    number_asformat.cpp
+    number_capi.cpp
     number_compact.cpp
     number_compact.h
+    number_currencysymbols.cpp
     number_decimalquantity.cpp
     number_decimalquantity.h
     number_decimfmtprops.cpp
@@ -157,8 +159,10 @@ add_library(
     number_integerwidth.cpp
     number_longnames.cpp
     number_longnames.h
+    number_mapper.cpp
     number_modifiers.cpp
     number_modifiers.h
+    number_multiplier.cpp
     number_notation.cpp
     number_padding.cpp
     number_patternmodifier.cpp
@@ -169,21 +173,34 @@ add_library(
     number_roundingutils.h
     number_scientific.cpp
     number_scientific.h
+    number_skeletons.cpp
     number_stringbuilder.cpp
     number_stringbuilder.h
     number_types.h
+    number_utils.cpp
     number_utils.h
     numfmt.cpp
+    numparse_affixes.cpp
+    numparse_compositions.cpp
+    numparse_currency.cpp
+    numparse_decimal.cpp
+    numparse_impl.cpp
+    numparse_parsednumber.cpp
+    numparse_scientific.cpp
+    numparse_stringsegment.cpp
+    numparse_symbols.cpp
+    numparse_validators.cpp
+    numrange_fluent.cpp
+    numrange_impl.cpp
+    numrange_impl.h
     numsys.cpp
     olsontz.cpp
     olsontz.h
     persncal.cpp
     persncal.h
-    pluralaffix.cpp
     plurfmt.cpp
     plurrule_impl.h
     plurrule.cpp
-    precision.cpp
     quant.cpp
     quant.h
     quantityformatter.cpp
@@ -224,7 +241,6 @@ add_library(
     selfmtimpl.h
     sharedbreakiterator.cpp
     simpletz.cpp
-    smallintformatter.cpp
     smpdtfmt.cpp
     smpdtfst.cpp
     sortkey.cpp
@@ -271,6 +287,7 @@ add_library(
     udatpg.cpp
     ufieldpositer.cpp
     uitercollationiterator.cpp
+    ulistformatter.cpp
     ulocdata.cpp
     umsg_imp.h
     umsg.cpp
@@ -296,8 +313,6 @@ add_library(
     utf8collationiterator.cpp
     utmscale.cpp
     utrans.cpp
-    valueformatter.cpp
-    visibledigits.cpp
     vtzone.cpp
     vzone.cpp
     vzone.h
