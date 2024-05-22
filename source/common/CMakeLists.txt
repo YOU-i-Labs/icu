@@ -13,10 +13,12 @@ add_library(
     bytestriebuilder.cpp
     bytestrieiterator.cpp
     caniter.cpp
+    capi_helper.h
     characterproperties.cpp
     chariter.cpp
     charstr.cpp
     charstr.h
+    charstrmap.h
     cmemory.cpp
     cmemory.h
     cpputils.h
@@ -30,6 +32,8 @@ add_library(
     dictionarydata.cpp
     dtintrv.cpp
     edits.cpp
+    emojiprops.cpp
+    emojiprops.h
     errorcode.cpp
     filteredbrk.cpp
     filteredbrk.cpp
@@ -39,19 +43,31 @@ add_library(
     icuplug.cpp
     icuplugimp.h
     loadednormalizer2impl.cpp
+    localebuilder.cpp
+    localematcher.cpp
+    localeprioritylist.cpp
+    localeprioritylist.h
     localsvc.h
     locavailable.cpp
     locbased.cpp
     locbased.h
     locdispnames.cpp
+    locdistance.cpp
+    locdistance.h
     locdspnm.cpp
     locid.cpp
     loclikely.cpp
+    loclikelysubtags.cpp
+    loclikelysubtags.h
     locmap.cpp
     locmap.h
     locresdata.cpp
     locutil.cpp
     locutil.h
+    lsr.cpp
+    lsr.h
+    lstmbe.cpp
+    lstmbe.h
     messagepattern.cpp
     msvcres.h
     mutex.h
@@ -90,6 +106,8 @@ add_library(
     resbund_cnv.cpp
     resbund.cpp
     resource.cpp
+    restrace.cpp
+    restrace.h
     ruleiter.cpp
     ruleiter.h
     schriter.cpp
@@ -185,6 +203,7 @@ add_library(
     uinvchar.cpp
     uinvchar.h
     uiter.cpp
+    ulayout_props.h
     ulist.cpp
     ulist.h
     uloc_keytype.cpp
@@ -201,6 +220,7 @@ add_library(
     unifiedcache.cpp
     unifilt.cpp
     unifunct.cpp
+    uniquecharstr.h
     uniset_closure.cpp
     uniset_props.cpp
     uniset.cpp

@@ -131,6 +131,8 @@ add_library(
     japancal.h
     listformatter.cpp
     measfmt.cpp
+    measunit_extra.cpp
+    measunit_impl.h
     measunit.cpp
     measure.cpp
     msgfmt_impl.h
@@ -147,7 +149,6 @@ add_library(
     nfsubs.h
     nortrans.cpp
     nortrans.h
-    nounit.cpp
     nultrans.cpp
     nultrans.h
     number_affixutils.cpp
@@ -184,7 +185,10 @@ add_library(
     number_scientific.cpp
     number_scientific.h
     number_skeletons.cpp
+    number_symbolswrapper.cpp
     number_types.h
+    number_usageprefs.cpp
+    number_usageprefs.h
     number_utils.cpp
     number_utils.h
     numfmt.cpp
@@ -197,6 +201,7 @@ add_library(
     numparse_scientific.cpp
     numparse_symbols.cpp
     numparse_validators.cpp
+    numrange_capi.cpp
     numrange_fluent.cpp
     numrange_impl.cpp
     numrange_impl.h
@@ -205,6 +210,8 @@ add_library(
     olsontz.h
     persncal.cpp
     persncal.h
+    pluralranges.cpp
+    pluralranges.h
     plurfmt.cpp
     plurrule_impl.h
     plurrule.cpp
@@ -304,6 +311,14 @@ add_library(
     unesctrn.h
     uni2name.cpp
     uni2name.h
+    units_complexconverter.cpp
+    units_complexconverter.h
+    units_converter.cpp
+    units_converter.h
+    units_data.cpp
+    units_data.h
+    units_router.cpp
+    units_router.h
     unum.cpp
     unumsys.cpp
     upluralrules.cpp
