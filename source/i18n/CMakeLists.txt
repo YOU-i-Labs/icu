@@ -78,6 +78,7 @@ add_library(
     decNumber.cpp
     decNumber.h
     decNumberLocal.h
+    displayoptions.cpp
     double-conversion-bignum-dtoa.cpp
     double-conversion-bignum.cpp
     double-conversion-cached-powers.cpp
@@ -127,6 +128,8 @@ add_library(
     inputext.h
     islamcal.cpp
     islamcal.h
+    iso8601cal.cpp
+    iso8601cal.h
     japancal.cpp
     japancal.h
     listformatter.cpp
@@ -184,6 +187,7 @@ add_library(
     number_roundingutils.h
     number_scientific.cpp
     number_scientific.h
+    number_simple.cpp
     number_skeletons.cpp
     number_symbolswrapper.cpp
     number_types.h
