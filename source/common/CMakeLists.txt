@@ -340,7 +340,9 @@ if(NOT BUILD_SHARED_LIBS)
 
   # When U_STATIC_IMPLEMENTATION is defined cmemory.h is required to be included.
   install(
-    FILES "cmemory.h"
+    FILES
+      cmemory.h
+      uassert.h
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
   )
 endif()

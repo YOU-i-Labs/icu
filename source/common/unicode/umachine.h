@@ -96,7 +96,7 @@
 #    define U_ATTRIBUTE_DEPRECATED __attribute__ ((deprecated))
 /**
  * \def U_ATTRIBUTE_DEPRECATED
- * This is used for Visual C++ specific attributes 
+ * This is used for Visual C++ specific attributes
  * @internal
  */
 #elif defined(_MSC_VER) && (_MSC_VER >= 1400)
@@ -288,6 +288,9 @@ typedef int8_t UBool;
         defined(U_TOOLUTIL_IMPLEMENTATION)
     // Inside ICU: Keep FALSE & TRUE available.
 #   define U_DEFINE_FALSE_AND_TRUE 1
+#elif defined(__PARAGRAPHLAYOUT_H) || defined(__LETYPES_H)
+    // Using harfbuzz layout engine: Keep FALSE & TRUE available.
+#   define U_DEFINE_FALSE_AND_TRUE 1
 #else
     // Outside ICU: Avoid collision with non-macro definitions of FALSE & TRUE.
 #   define U_DEFINE_FALSE_AND_TRUE 0
@@ -470,7 +473,7 @@ typedef int32_t UChar32;
  * This value is intended for sentinel values for APIs that
  * (take or) return single code points (UChar32).
  * It is outside of the Unicode code point range 0..0x10ffff.
- * 
+ *
  * For example, a "done" or "error" value in a new API
  * could be indicated with U_SENTINEL.
  *
