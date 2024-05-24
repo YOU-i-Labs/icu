@@ -173,6 +173,9 @@
 #   else
 #       define U_PLATFORM U_PF_DARWIN
 #   endif
+#elif defined(__ORBIS__) || defined(__PROSPERO__)
+#   define U_PLATFORM U_PF_BSD
+#   define U_PLATFORM_HAS_NO_GETENV
 #elif defined(BSD) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__MirBSD__)
 #   if defined(__FreeBSD__)
 #       include <sys/endian.h>
