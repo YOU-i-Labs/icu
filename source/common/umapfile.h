@@ -39,7 +39,7 @@ U_CFUNC void  uprv_unmapFile(UDataMemory *pData);
 #define MAP_STDIO       3
 #define MAP_390DLL      4
 
-#if UCONFIG_NO_FILE_IO
+#if UCONFIG_NO_FILE_IO || defined(U_PLATFORM_HAS_NO_MMAP)
 #   define MAP_IMPLEMENTATION MAP_NONE
 #elif U_PLATFORM_USES_ONLY_WIN32_API
 #   define MAP_IMPLEMENTATION MAP_WIN32

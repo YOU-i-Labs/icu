@@ -34,6 +34,7 @@ endif()
 if(ICU_WINDOWS_STORE)
   add_definitions(-DU_PLATFORM_USES_ONLY_WIN32_API)
   add_definitions(-DU_PLATFORM_HAS_WINUWP_API)
+  add_definitions(-DU_PLATFORM_HAS_NO_MMAP)
 endif()
 
 if(TIZEN_NACL OR PS4 OR PS5)
