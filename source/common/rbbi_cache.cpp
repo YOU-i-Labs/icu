@@ -415,7 +415,7 @@ UBool RuleBasedBreakIterator::BreakCache::populateNear(int32_t position, UErrorC
                 // Note (Andy Heninger): I don't think this condition can occur, but it's hard
                 // to prove that it can't. We ran off the end of the string looking a boundary
                 // following a safe point; choose the end of the string as that boundary.
-                aBoundary = utext_nativeLength(&fBI->fText);
+                aBoundary = static_cast<int32_t>(utext_nativeLength(&fBI->fText));
             }
             ruleStatusIndex = fBI->fRuleStatusIndex;
         }

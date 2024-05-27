@@ -28,6 +28,12 @@ if(MSVC)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
   add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
   add_definitions(-DU_ATTRIBUTE_DEPRECATED=)
+  add_compile_options(/utf-8)
+endif()
+
+if(ICU_WINDOWS_STORE)
+  add_definitions(-DU_PLATFORM_USES_ONLY_WIN32_API)
+  add_definitions(-DU_PLATFORM_HAS_WINUWP_API)
 endif()
 
 if(TIZEN_NACL OR PS4 OR PS5)
