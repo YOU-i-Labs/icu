@@ -444,7 +444,7 @@ NumberFormatterImpl::macrosToMicroGenerator(const MacroProps& macros, bool safe,
     if (isCompactNotation) {
         CompactType compactType = (isCurrency && unitWidth != UNUM_UNIT_WIDTH_FULL_NAME)
                                   ? CompactType::TYPE_CURRENCY : CompactType::TYPE_DECIMAL;
-        auto newCompactHandler = new CompactHandler(
+        LocalPointer<CompactHandler> newCompactHandler(new CompactHandler(
             macros.notation.fUnion.compactStyle,
             macros.locale,
             nsName,
@@ -453,7 +453,7 @@ NumberFormatterImpl::macrosToMicroGenerator(const MacroProps& macros, bool safe,
             patternModifier,
             safe,
             chain,
-            status);
+            status));
         if (U_FAILURE(status)) {
             return nullptr;
         }
@@ -461,7 +461,7 @@ NumberFormatterImpl::macrosToMicroGenerator(const MacroProps& macros, bool safe,
             status = U_MEMORY_ALLOCATION_ERROR;
             return nullptr;
         }
-        fCompactHandler.adoptInstead(newCompactHandler);
+        fCompactHandler.adoptInstead(newCompactHandler.orphan());
         chain = fCompactHandler.getAlias();
     }
     if (U_FAILURE(status)) {
